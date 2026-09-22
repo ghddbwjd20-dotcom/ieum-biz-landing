@@ -192,8 +192,9 @@
             width: 48px; height: 48px; border-radius: 50%;
             background: #F7F1E3; border: 1.5px solid rgba(196,160,74,0.45);
             display: flex; align-items: center; justify-content: center;
-            font-size: 20px; margin: 0 auto 16px;
+            margin: 0 auto 16px;
         }
+        .pain-card-icon svg { width: 22px; height: 22px; color: var(--navy); display: block; }
         .pain-card-text { font-size: 15px; line-height: 1.7; color: #2A3A52; }
         .pain-answer { text-align: center; }
         .pain-dots { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 28px; }
@@ -276,7 +277,8 @@
             transition: background .25s, border-color .25s;
         }
         .service-card:hover { background: rgba(78,138,212,0.1); border-color: rgba(78,138,212,0.5); }
-        .service-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 12px; display: block; }
+        .service-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .service-title svg { width: 20px; height: 20px; color: var(--mint-light); flex-shrink: 0; display: block; }
         .service-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.8; }
 
         .process-section { padding: 100px 60px; background: var(--off-white); }
@@ -387,7 +389,8 @@
         .form-submit:hover { background: var(--mint-light); color: var(--navy); transform: translateY(-2px); }
         .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
         .form-success { display: none; text-align: center; padding: 40px 0; }
-        .form-success-icon { font-size: 48px; margin-bottom: 16px; }
+        .form-success-icon { margin-bottom: 16px; display: flex; justify-content: center; }
+        .form-success-icon svg { width: 40px; height: 40px; color: var(--mint-light); display: block; }
         .form-success-title { font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
         .form-success-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; }
 
@@ -513,6 +516,17 @@
     </style>
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-7"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5.5"/><path d="m8.2 13.6-1.4 8.4L12 19l5.2 3-1.4-8.4"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+        <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16.5 9"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    </svg>
     <!-- SNS 주소는 href만 교체하면 됩니다 -->
     <div class="float-side">
         <a class="float-btn consult" href="#apply">무료<br>상담</a>
@@ -521,7 +535,7 @@
             <span>네이버</span>
         </a>
         <a class="float-btn kakao" href="https://pf.kakao.com/" target="_blank" rel="noopener noreferrer" aria-label="카카오톡">
-            <span class="float-icon">💬</span>
+            <svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>
             <span>카카오</span>
         </a>
         <a class="float-btn insta" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="인스타그램">
@@ -600,15 +614,15 @@
             </div>
             <div class="pain-grid">
                 <div class="pain-card anim from-left delay-1">
-                    <div class="pain-card-icon">🔍</div>
+                    <div class="pain-card-icon"><svg aria-hidden="true"><use href="#i-search"/></svg></div>
                     <div class="pain-card-text">정책자금 종류가 너무 많아<br>어디서부터 시작해야 할지<br>막막합니다.</div>
                 </div>
                 <div class="pain-card anim from-bottom delay-2">
-                    <div class="pain-card-icon">📄</div>
+                    <div class="pain-card-icon"><svg aria-hidden="true"><use href="#i-file"/></svg></div>
                     <div class="pain-card-text">사업계획서·서류 준비가<br>복잡해서 혼자 하기엔<br>엄두가 나지 않아요.</div>
                 </div>
                 <div class="pain-card anim from-right delay-3">
-                    <div class="pain-card-icon">⏰</div>
+                    <div class="pain-card-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
                     <div class="pain-card-text">신청했다가 부결되면<br>시간과 비용 낭비가<br>걱정됩니다.</div>
                 </div>
             </div>
@@ -721,27 +735,27 @@
             </div>
             <div class="services-grid">
                 <div class="service-card anim from-bottom delay-1">
-                    <span class="service-title">🔎 정책자금 진단</span>
+                    <span class="service-title"><svg aria-hidden="true"><use href="#i-search"/></svg>정책자금 진단</span>
                     <div class="service-desc">업종·현황에 맞는 운영자금·시설자금·창업자금 방향을 빠르게 정리하고 접근 가능한 우선순위를 선별합니다.</div>
                 </div>
                 <div class="service-card anim from-bottom delay-2">
-                    <span class="service-title">📋 서류 준비 지원</span>
+                    <span class="service-title"><svg aria-hidden="true"><use href="#i-file"/></svg>서류 준비 지원</span>
                     <div class="service-desc">필수 서류 목록과 준비 순서, 놓치기 쉬운 보완 포인트까지 체계적으로 안내해 시행착오를 최소화합니다.</div>
                 </div>
                 <div class="service-card anim from-bottom delay-3">
-                    <span class="service-title">📊 사업계획서 전략</span>
+                    <span class="service-title"><svg aria-hidden="true"><use href="#i-chart"/></svg>사업계획서 전략</span>
                     <div class="service-desc">심사위원이 주목하는 포인트를 중심으로 기업의 강점을 극대화한 사업계획서를 함께 구성합니다.</div>
                 </div>
                 <div class="service-card anim from-bottom delay-1">
-                    <span class="service-title">🏅 기업 인증 컨설팅</span>
+                    <span class="service-title"><svg aria-hidden="true"><use href="#i-award"/></svg>기업 인증 컨설팅</span>
                     <div class="service-desc">이노비즈·메인비즈·벤처인증 등 성장 단계에 맞는 인증 방향을 검토하고, 세제 혜택과 금융 우대 기반을 마련합니다.</div>
                 </div>
                 <div class="service-card anim from-bottom delay-2">
-                    <span class="service-title">🛡️ 보증·신용 자금</span>
+                    <span class="service-title"><svg aria-hidden="true"><use href="#i-shield"/></svg>보증·신용 자금</span>
                     <div class="service-desc">신용보증기금·기술보증기금 연계 보증 자금과 신용 대출 가능성을 함께 진단하고 최적 경로를 제안합니다.</div>
                 </div>
                 <div class="service-card anim from-bottom delay-3">
-                    <span class="service-title">🔄 사후관리 &amp; 추가 전략</span>
+                    <span class="service-title"><svg aria-hidden="true"><use href="#i-refresh"/></svg>사후관리 &amp; 추가 전략</span>
                     <div class="service-desc">자금 승인 이후 보완 방향과 다음 지원사업·인증 연계 가능성까지 지속적으로 함께 설계합니다.</div>
                 </div>
             </div>
@@ -941,7 +955,7 @@
                     <button class="form-submit" id="submitBtn" type="button">무료 상담 신청하기</button>
                 </div>
                 <div class="form-success" id="successArea">
-                    <div class="form-success-icon">✅</div>
+                    <div class="form-success-icon"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
                     <div class="form-success-title">신청이 완료되었습니다!</div>
                     <div class="form-success-desc">전담 컨설턴트가 24시간 이내 직접 연락드립니다.<br>평일 09:00 ~ 18:00 운영 기준으로 순차 처리됩니다.</div>
                 </div>
