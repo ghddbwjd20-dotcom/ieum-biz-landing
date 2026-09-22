@@ -3,1347 +3,888 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이음비즈솔루션 | 기업과 정책자금을 잇는 컨설팅</title>
-    <meta name="description" content="이음비즈솔루션은 소상공인·중소기업 현황을 듣고, 접근 가능한 정책자금 경로를 정리합니다. 무료 초진, 전담 1인, 전국 비대면.">
+    <title>이음비즈솔루션 | 정책자금 전문 컨설팅</title>
+    <meta name="description" content="이음비즈솔루션 — 소상공인·중소기업 정책자금 전문 컨설팅. 무료 초기 진단, 당일 응답, 전국 비대면.">
     <meta name="theme-color" content="#0A1834">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:site_name" content="이음비즈솔루션">
-    <meta property="og:title" content="이음비즈솔루션 | 기업과 정책자금을 잇는 컨설팅">
-    <meta property="og:description" content="이음비즈솔루션은 소상공인·중소기업 현황을 듣고, 접근 가능한 정책자금 경로를 정리합니다. 무료 초진, 전담 1인, 전국 비대면.">
+    <meta property="og:title" content="이음비즈솔루션 | 정책자금 전문 컨설팅">
+    <meta property="og:description" content="이음비즈솔루션 — 소상공인·중소기업 정책자금 전문 컨설팅. 무료 초기 진단, 당일 응답, 전국 비대면.">
     <meta property="og:url" content="https://ghddbwjd20-dotcom.github.io/ieum-biz-landing/">
     <meta property="og:image" content="https://ghddbwjd20-dotcom.github.io/ieum-biz-landing/images/og-logo.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:image:alt" content="이음비즈솔루션">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="이음비즈솔루션 | 기업과 정책자금을 잇는 컨설팅">
-    <meta name="twitter:description" content="이음비즈솔루션은 소상공인·중소기업 현황을 듣고, 접근 가능한 정책자금 경로를 정리합니다. 무료 초진, 전담 1인, 전국 비대면.">
+    <meta name="twitter:title" content="이음비즈솔루션 | 정책자금 전문 컨설팅">
+    <meta name="twitter:description" content="이음비즈솔루션 — 소상공인·중소기업 정책자금 전문 컨설팅. 무료 초기 진단, 당일 응답, 전국 비대면.">
     <meta name="twitter:image" content="https://ghddbwjd20-dotcom.github.io/ieum-biz-landing/images/og-logo.png">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #0F1928;
-            --muted: #5C6778;
-            --line: #E4E8EE;
-            --bg: #F4F6F9;
-            --white: #fff;
             --navy: #0A1834;
             --navy-mid: #102448;
+            --navy-light: #1A3A6A;
             --accent: #C4A04A;
             --accent-light: #E3C56A;
-            --blue: #C4A04A;
-            --blue-mid: #E3C56A;
-            --blue-soft: #F7F1E3;
-            --serif: 'Noto Serif KR', serif;
+            --mint: #C4A04A;
+            --mint-light: #E3C56A;
+            --white: #fff;
+            --off-white: #F4F6F9;
+            --gray-100: #E4E8EE;
+            --gray-600: #5C6778;
+            --text-dark: #0F1928;
+            --text-muted: #5C6778;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 80px; }
-        body { font-family: 'Noto Sans KR', sans-serif; color: var(--ink); background: #fff; }
-        h1, h2, h3, .hero h1, .trust-item, .chip strong, .path-item h3, .scope-head h3,
-        .case h3, .review-title, .ceo blockquote, .diag-result h3, .success h3, .faq-item button {
-            font-family: var(--serif);
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
+
+        .float-side {
+            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 8px; z-index: 999;
+        }
+        .float-btn {
+            width: 54px; height: 54px; border-radius: 12px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-size: 9px; font-weight: 700; text-decoration: none; cursor: pointer;
+            transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 4px 16px rgba(10,24,52,0.22);
+            letter-spacing: .3px; text-align: center; line-height: 1.25; gap: 3px;
+            color: var(--white);
+        }
+        .float-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
+        .float-btn.consult { background: linear-gradient(180deg, var(--mint-light), var(--mint)); color: var(--navy); font-size: 12px; }
+        .float-btn.naver { background: #03C75A; }
+        .float-btn.kakao { background: #FEE500; color: #3C1E1E; }
+        .float-btn.insta { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .float-btn.channel { background: #FF0000; }
+        .float-icon { font-size: 16px; line-height: 1; }
+        .float-btn svg { display: block; }
 
         .nav {
-            position: fixed; inset: 0 0 auto 0; z-index: 50; height: 72px;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 40px; background: #0A1834;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            height: 72px; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 60px;
+            background: #0A1834;
             border-bottom: 1px solid rgba(196,160,74,0.22);
+            transition: background .3s;
         }
-        .nav-logo img { height: 40px; width: auto; display: block; }
-        .nav-links { display: flex; align-items: center; gap: 28px; }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; background: none; padding: 0; }
+        .nav-logo img { height: 42px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
         .nav-links a {
-            color: rgba(255,255,255,0.78); text-decoration: none; font-size: 13px; position: relative;
-            transition: color .2s;
+            color: rgba(255,255,255,0.78); font-size: 13px; text-decoration: none;
+            letter-spacing: .5px; transition: color .2s;
+            padding-bottom: 2px; border-bottom: 1.5px solid transparent;
         }
-        .nav-links a:not(.nav-cta)::after {
-            content: ''; position: absolute; left: 0; bottom: -8px;
-            width: 0; height: 2px; background: var(--accent); transition: width .25s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-light); }
-        .nav-links a:not(.nav-cta):hover::after,
-        .nav-links a.active:not(.nav-cta)::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--mint-light); border-color: var(--mint); }
         .nav-cta {
-            background: linear-gradient(180deg, var(--accent-light), var(--accent)); color: var(--navy) !important;
-            padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px !important;
-            transition: transform .2s, box-shadow .2s, background .2s;
+            background: linear-gradient(180deg, var(--mint-light), var(--mint)); color: var(--navy) !important;
+            padding: 8px 20px !important; border-radius: 6px;
+            font-weight: 700 !important; border-bottom: none !important; font-size: 12px !important;
         }
-        .nav-cta:hover { transform: translateY(-2px); background: var(--accent-light); box-shadow: 0 8px 18px rgba(196,160,74,.38); }
-        .hamburger {
-            display: none; background: none; border: 0; width: 36px; height: 36px; cursor: pointer;
-        }
-        .hamburger span { display: block; height: 2px; background: #fff; margin: 6px 0; transition: .25s; }
-        .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-        .drawer {
-            display: none; position: fixed; inset: 72px 0 0; background: rgba(6,14,32,0.97);
-            z-index: 49; flex-direction: column; padding: 28px 24px; gap: 8px;
-        }
-        .drawer.open { display: flex; }
-        .drawer a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .nav-cta:hover { background: var(--mint-light) !important; color: var(--navy) !important; }
 
         .hero {
-            position: relative; height: 100svh; min-height: 680px;
+            position: relative; height: 100vh; min-height: 680px;
             display: flex; align-items: center; justify-content: center;
             text-align: center; overflow: hidden;
-            background: url('images/city-bg.jpg') center / cover no-repeat;
         }
+        .hero-bg { position: absolute; inset: 0; overflow: hidden; }
         .hero-video {
             position: absolute; inset: 0; width: 100%; height: 100%;
-            object-fit: cover; object-position: center; display: block; pointer-events: none;
+            object-fit: cover; object-position: center;
+            pointer-events: none;
         }
-        .hero-wash {
-            position: absolute; inset: 0;
+        .hero-overlay {
+            position: absolute; inset: 0; z-index: 1;
             background: linear-gradient(160deg, rgba(8,20,44,0.72) 0%, rgba(10,24,52,0.62) 55%, rgba(16,36,72,0.78) 100%);
         }
-        .hero-glow { display: none; }
-        .hero-copy {
-            position: relative; z-index: 2; max-width: 820px;
-            padding: 120px 24px 80px; color: #fff;
-        }
-        .hero-copy .eyebrow { animation: fadeUp .7s .05s ease both; }
-        .hero-copy h1 { animation: fadeUp .8s .16s ease both; }
-        .hero-copy p { animation: fadeUp .8s .28s ease both; }
-        .hero-copy .hero-badges { animation: fadeUp .8s .34s ease both; }
-        .hero-copy .hero-actions { animation: fadeUp .8s .4s ease both; }
+        .hero-content { position: relative; z-index: 3; max-width: 820px; padding: 0 24px; animation: fadeUp .9s ease both; }
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(26px); }
-            to { opacity: 1; transform: none; }
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        .hero-eyebrow {
+            display: inline-block; font-size: 12px; letter-spacing: 4px;
+            color: var(--mint-light); font-weight: 400; margin-bottom: 24px;
+            border: 1px solid rgba(196,160,74,0.5); padding: 6px 20px; border-radius: 40px;
+        }
+        .hero-title {
+            font-family: 'Noto Serif KR', serif; font-size: 62px; font-weight: 900;
+            color: var(--white); line-height: 1.18; margin-bottom: 24px; letter-spacing: -1px;
+            word-break: keep-all;
+        }
+        .hero-title em { font-style: normal; color: var(--mint-light); display: block; }
+        .hero-desc { font-size: 22px; color: rgba(255,255,255,0.82); line-height: 1.9; margin-bottom: 40px; font-weight: 300; }
+        .hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+        .hero-badge {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(196,160,74,0.35);
+            color: rgba(255,255,255,0.9); padding: 8px 18px; border-radius: 40px; font-size: 13px;
+        }
+        .hero-btn {
+            display: inline-block; background: linear-gradient(180deg, var(--mint-light), var(--mint)); color: var(--navy);
+            font-size: 16px; font-weight: 700; padding: 18px 48px; border-radius: 8px;
+            text-decoration: none; letter-spacing: 1px;
+            transition: background .2s, transform .2s, box-shadow .2s;
+            box-shadow: 0 8px 32px rgba(196,160,74,0.38);
+        }
+        .hero-btn:hover { background: var(--mint-light); transform: translateY(-2px); }
         .hero-scroll {
-            position: absolute; bottom: 28px; left: 50%; z-index: 3;
-            display: flex; flex-direction: column; align-items: center; gap: 8px;
-            color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 1.6px; text-decoration: none;
-            transform: translateX(-50%);
-            animation: bounce 2s ease-in-out infinite;
+            position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+            z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 2px;
+            animation: bounce 2s infinite;
         }
-        .scroll-line { width: 1px; height: 34px; background: rgba(255,255,255,0.3); }
         @keyframes bounce {
             0%,100% { transform: translateX(-50%) translateY(0); }
             50% { transform: translateX(-50%) translateY(8px); }
         }
-        .eyebrow {
-            display: inline-flex; font-size: 12px; letter-spacing: 4px;
-            border: 1px solid rgba(196,160,74,0.5); padding: 6px 20px; border-radius: 40px;
-            color: var(--accent-light); background: transparent; margin-bottom: 24px;
-        }
-        .hero h1 {
-            font-size: clamp(30px, 5vw, 56px); line-height: 1.22; font-weight: 900;
-            letter-spacing: -1px; margin-bottom: 20px; color: #fff;
-            word-break: keep-all;
-        }
-        .hero h1 span { color: var(--accent-light); display: block; }
-        .hero p {
-            font-size: 20px; line-height: 1.8; color: rgba(255,255,255,0.82); font-weight: 300;
-            margin: 0 auto 28px; max-width: 620px; word-break: keep-all;
-        }
-        .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
-        .hero-badge {
-            background: rgba(255,255,255,0.08); border: 1px solid rgba(196,160,74,0.35);
-            color: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 40px; font-size: 13px;
-        }
-        .hero-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; justify-content: center; }
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 15px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;
-            border: 0; cursor: pointer; font-family: inherit;
-            transition: transform .2s, box-shadow .2s;
-        }
-        .btn:hover { transform: translateY(-3px); }
-        .progress {
-            position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 80;
-            background: linear-gradient(90deg, var(--accent-light), var(--accent));
-            pointer-events: none;
-        }
-        .btn-primary {
-            background: linear-gradient(180deg, var(--accent-light), var(--accent)); color: var(--navy);
-            box-shadow: 0 8px 32px rgba(196,160,74,0.38);
-            position: relative; overflow: hidden;
-        }
-        .btn-primary::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.38) 50%, transparent 65%);
-            transform: translateX(-130%);
-        }
-        .btn-primary:hover { background: var(--accent-light); box-shadow: 0 12px 28px rgba(196,160,74,.4); }
-        .btn-primary:hover::after { animation: shine .7s ease; }
-        @keyframes shine { to { transform: translateX(130%); } }
-        .btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
-        .hero .btn-primary { box-shadow: 0 8px 32px rgba(196,160,74,0.38); }
-        .hero .btn-ghost {
-            background: transparent; color: #fff; border-color: rgba(255,255,255,0.35);
-            box-shadow: none;
-        }
-        .hero .btn-ghost:hover { background: rgba(255,255,255,0.08); }
-        .bridge { display: flex; justify-content: center; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
-        .mid-cta { text-align: center; padding: 28px 0 4px; }
+        .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,0.3); }
 
-        .ico { width: 22px; height: 22px; display: block; color: var(--blue); }
-        .trust-wrap {
+        .ticker {
             background: var(--navy);
             border-top: 1px solid rgba(196,160,74,0.32);
             border-bottom: 1px solid rgba(196,160,74,0.32);
-            overflow: hidden;
-            position: relative; z-index: 3;
+            overflow: hidden; padding: 14px 0;
         }
-        .trust {
-            display: flex; width: max-content;
-            animation: marquee 32s linear infinite;
+        .ticker-inner { display: flex; animation: ticker 28s linear infinite; white-space: nowrap; }
+        @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .ticker-item {
+            display: inline-flex; align-items: center; gap: 12px; padding: 0 48px;
+            color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: 1px;
         }
-        .trust:hover { animation-play-state: paused; }
-        .trust-set { display: flex; align-items: center; }
-        .trust-item {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 16px 36px; white-space: nowrap;
-            font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 1px;
-        }
-        .trust-dot {
-            width: 5px; height: 5px; border-radius: 50%;
-            background: var(--blue-mid); flex-shrink: 0; display: block;
-        }
-        @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
+        .ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--mint); flex-shrink: 0; }
 
-        .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-        section.block { padding: 88px 0; }
-        .kicker { color: var(--blue); font-size: 11px; font-weight: 600; letter-spacing: 3.2px; margin-bottom: 12px; }
-        h2 { font-size: 34px; line-height: 1.35; letter-spacing: -0.6px; margin-bottom: 12px; }
-        .lead { color: var(--muted); font-size: 15px; line-height: 1.55; max-width: 480px; }
+        .section-label { font-size: 11px; letter-spacing: 4px; color: var(--mint); font-weight: 600; text-transform: uppercase; margin-bottom: 14px; }
+        .section-title { font-family: 'Noto Serif KR', serif; font-size: 36px; font-weight: 700; color: var(--text-dark); line-height: 1.35; margin-bottom: 16px; }
+        .section-title.white { color: var(--white); }
+        .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; }
+        .section-sub.white { color: rgba(255,255,255,0.65); }
 
-        .diag {
-            position: relative;
-            overflow: hidden;
-            background: #E4E9F1;
-        }
-        .diag-radar {
-            position: absolute; left: 50%; top: 46%;
-            width: min(760px, 92vw); height: min(760px, 92vw);
-            transform: translate(-50%, -50%);
-            pointer-events: none; z-index: 0;
-        }
-        .diag-radar i {
-            position: absolute; inset: 0; border-radius: 50%;
-            border: 1px solid rgba(196,160,74,.18);
-        }
-        .diag-radar i:nth-child(2) { inset: 16%; animation: radarPulse 7s ease-in-out infinite; }
-        .diag-radar i:nth-child(3) { inset: 32%; animation: radarPulse 7s 2.2s ease-in-out infinite; }
-        .diag-radar .sweep {
-            position: absolute; inset: 10%; border-radius: 50%;
-            background: conic-gradient(from 210deg, transparent 0 72%, rgba(196,160,74,.16) 86%, transparent 100%);
-            animation: radarSpin 12s linear infinite;
-        }
-        .diag-radar em {
-            position: absolute; width: 9px; height: 9px; border-radius: 50%;
-            background: #fff; border: 2px solid rgba(196,160,74,.4);
-            transition: transform .35s, background .35s, border-color .35s, box-shadow .35s;
-        }
-        .diag-radar em:nth-of-type(1) { left: 18%; top: 28%; }
-        .diag-radar em:nth-of-type(2) { right: 18%; top: 28%; }
-        .diag-radar em:nth-of-type(3) { left: 18%; bottom: 30%; }
-        .diag-radar em:nth-of-type(4) { right: 18%; bottom: 30%; }
-        .diag[data-pick="many"] .diag-radar em:nth-of-type(1),
-        .diag[data-pick="docs"] .diag-radar em:nth-of-type(2),
-        .diag[data-pick="reject"] .diag-radar em:nth-of-type(3),
-        .diag[data-pick="urgent"] .diag-radar em:nth-of-type(4) {
-            background: var(--blue); border-color: var(--blue);
-            transform: scale(1.45);
-            box-shadow: 0 0 0 8px rgba(196,160,74,.16);
-        }
-        @keyframes radarSpin { to { transform: rotate(360deg); } }
-        @keyframes radarPulse {
-            0%,100% { opacity: .45; }
-            50% { opacity: 1; }
-        }
-        .diag > .wrap { position: relative; z-index: 1; }
-        .diag .anim, .diag h2, .diag .lead { text-align: center; margin-left: auto; margin-right: auto; }
-        .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 40px 0 18px; align-items: stretch; }
-        .chip {
-            display: grid; grid-template-columns: 48px 1fr auto; grid-template-rows: auto auto;
-            column-gap: 14px; align-items: center;
-            width: 100%; min-height: 104px; height: 100%;
-            text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 12px;
-            padding: 18px 18px 18px 22px; cursor: pointer; font-family: inherit; color: var(--ink);
-            box-shadow: none; position: relative; overflow: hidden;
-            transition: border-color .25s, background .25s, transform .25s;
-        }
-        .chip::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
-            background: var(--blue); transition: width .28s ease;
-        }
-        .chip:hover { border-color: var(--blue-mid); transform: translateY(-4px); }
-        .chip-ico {
-            grid-row: 1 / span 2; width: 48px; height: 48px; border-radius: 12px;
-            background: var(--blue-soft); display: flex; align-items: center; justify-content: center;
-            transition: background .25s;
-        }
-        .chip-ico .ico { width: 22px; height: 22px; }
-        .chip strong { font-size: 15px; grid-column: 2; }
-        .chip em { font-style: normal; font-size: 13px; color: var(--muted); line-height: 1.55; grid-column: 2; word-break: keep-all; }
-        .chip::after {
-            content: ''; grid-column: 3; grid-row: 1 / span 2;
-            width: 18px; height: 18px; border-radius: 50%;
-            border: 2px solid var(--line); justify-self: end;
-        }
-        .chip.active { border-color: var(--blue); background: #F7F8FB; box-shadow: none; transform: none; }
-        .chip.active::before { width: 4px; }
-        .chip.active .chip-ico { background: var(--accent); animation: icoPop .4s ease; }
-        .chip.active .ico { color: var(--navy); }
-        .chip.active::after {
-            border-color: var(--blue); background: var(--blue);
-            box-shadow: inset 0 0 0 3px #fff;
-        }
-        @keyframes icoPop {
-            0% { transform: scale(1); }
-            40% { transform: scale(1.12); }
-            100% { transform: scale(1); }
-        }
-        .diag-result {
-            background: #fff; border-radius: 12px; padding: 22px 26px;
-            border: 1px solid var(--line); border-left: 4px solid var(--blue);
-            box-shadow: none;
-            display: flex; align-items: center; justify-content: space-between; gap: 20px;
-        }
-        .diag-result h3 { font-size: 17px; margin-bottom: 6px; }
-        .diag-result p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-        .diag-result .btn { flex-shrink: 0; }
-        .diag-swap { animation: diagIn .35s ease; }
-        @keyframes diagIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: none; }
-        }
-
-        .path-sec {
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 10% 0%, rgba(196,160,74,.08), transparent 32%),
-                radial-gradient(circle at 92% 100%, rgba(18,26,44,.04), transparent 34%),
-                #fff;
-        }
-        .path-sec::before {
-            content: '';
-            position: absolute; inset: 0;
-            background-image: radial-gradient(rgba(18,26,44,.11) 1.1px, transparent 1.1px);
-            background-size: 22px 22px;
-            mask-image: radial-gradient(ellipse at 50% 45%, #000 20%, transparent 78%);
-            pointer-events: none;
-        }
-        .path-deco {
-            position: absolute; left: 0; right: 0; top: 18%;
-            width: 100%; height: 58%;
-            pointer-events: none; z-index: 0;
-        }
-            .path-deco-line {
-            fill: none; stroke: #C4A04A; stroke-opacity: .22; stroke-width: 1.4;
-            stroke-dasharray: 7 11;
-            animation: dashMove 20s linear infinite;
-        }
-        .path-deco-line.alt {
-            stroke-opacity: .1; stroke-width: 1.1;
-            animation-duration: 28s; animation-direction: reverse;
-        }
-        @keyframes dashMove { to { stroke-dashoffset: -280; } }
-        .path-sec .wrap { position: relative; z-index: 1; }
-        .path-sec .anim, .path-sec h2, .path-sec .lead { text-align: center; margin-left: auto; margin-right: auto; }
-        .path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
-        .path-item {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 14px; padding: 26px 24px 22px;
-            box-shadow: none;
-            cursor: pointer; text-align: left;
-            transition: border-color .25s, transform .25s;
-        }
-        .path-item:hover { transform: translateY(-4px); }
-        .path-item.on {
-            border-color: var(--blue);
-            box-shadow: none;
-            transform: translateY(-4px);
-        }
-        .path-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-        .path-copy { flex: 1; min-width: 0; }
-        .path-step {
-            font-size: 11px; font-weight: 800; letter-spacing: 1.2px;
-            color: var(--blue); margin-bottom: 10px;
-        }
-        .path-item h3 { font-size: 18px; margin-bottom: 10px; word-break: keep-all; }
-        .path-item p { color: var(--muted); font-size: 13px; line-height: 1.75; word-break: keep-all; }
-        .path-more {
-            display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
-            font-size: 11px; font-weight: 700; letter-spacing: .6px; color: var(--blue);
-            text-decoration: none;
-        }
-        .path-vis { width: 88px; height: 88px; flex-shrink: 0; position: relative; }
-        .vis-card {
-            position: absolute; inset: 8px 0 0 8px; border-radius: 14px;
-            background: linear-gradient(180deg, #F7F1E3, #EFE3C4);
-            box-shadow: 12px 14px 0 var(--blue);
-            display: flex; align-items: flex-end; gap: 4px; padding: 16px 12px 12px;
-        }
-        .vis-card i { width: 8px; background: #fff; border-radius: 2px; display: block; }
-        .vis-card i:nth-child(1) { height: 18px; }
-        .vis-card i:nth-child(2) { height: 28px; }
-        .vis-card i:nth-child(3) { height: 22px; }
-        .vis-sign { position: absolute; inset: 6px; }
-        .vis-sign .pole {
-            position: absolute; left: 50%; top: 8px; bottom: 0; width: 5px;
-            background: #D5DBE6; transform: translateX(-50%); border-radius: 3px;
-        }
-        .vis-sign b {
-            position: absolute; left: 50%; height: 18px; background: #fff;
-            border: 1px solid #E2E8F0; border-radius: 4px; font-size: 8px; font-weight: 700;
-            color: var(--blue); display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 6px 14px rgba(26,39,68,.08);
-        }
-        .vis-sign b:nth-child(2) { top: 14px; width: 54px; transform: translateX(-4px); }
-        .vis-sign b:nth-child(3) { top: 40px; width: 48px; transform: translateX(-86%); }
-        .vis-note {
-            position: absolute; right: 0; top: 8px; width: 64px; height: 72px;
-            background: #fff; border-radius: 10px; border: 1px solid #E6ECF4;
-            box-shadow: 0 12px 24px rgba(26,39,68,.1);
-        }
-        .vis-note::after {
-            content: ''; position: absolute; right: 10px; bottom: 12px;
-            width: 16px; height: 16px; border-radius: 50%;
-            border: 2px solid var(--blue-mid);
-        }
-        .path-item.on .vis-card { animation: pathFloat 2.6s ease-in-out infinite; }
-        .path-item.on .vis-sign { animation: pathFloat 2.8s ease-in-out infinite; }
-        .path-item.on .vis-note { animation: pathFloat 2.4s ease-in-out infinite; }
-        @keyframes pathFloat {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-        .path-track {
-            position: relative; max-width: 420px; margin: 44px auto 0;
-            display: flex; justify-content: space-between; padding-bottom: 28px;
-        }
-        .path-track::before {
-            content: ''; position: absolute; left: 8px; right: 8px; top: 7px;
-            height: 2px; background: #E2E8F0;
-        }
-        .path-fill {
-            position: absolute; left: 8px; top: 7px; height: 2px; width: 0;
-            background: var(--blue-mid); transition: width .45s ease;
-        }
-        .path-dot {
-            width: 16px; height: 16px; border-radius: 50%; border: 0; padding: 0;
-            background: #fff; border: 2px solid #D5DDE8; position: relative; z-index: 1;
-            cursor: pointer;
-        }
-        .path-dot.on { background: var(--blue-mid); border-color: var(--blue-mid); box-shadow: 0 0 0 5px rgba(196,160,74,.18); }
-        .path-dot span {
-            position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
-            font-size: 11px; font-weight: 700; color: var(--muted); white-space: nowrap;
-        }
-        .path-dot.on span { color: var(--blue); }
-
-        .scope { background: #E8EEF6; }
-        .scope > .wrap { position: relative; z-index: 1; }
-        .scope .kicker { color: var(--blue); }
-        .scope h2 { color: var(--ink); }
-        .scope .lead { color: var(--muted); }
-        .scope-chain {
-            position: relative;
-            display: flex; align-items: center; justify-content: space-between;
-            max-width: 560px; margin: 28px auto 0;
-        }
-        .scope-chain::before {
-            content: '';
-            position: absolute; left: 14px; right: 14px; top: 50%;
-            height: 2px; background: var(--line); transform: translateY(-50%);
-        }
-        .scope-fill {
-            position: absolute; left: 14px; top: 50%; height: 2px; width: 0;
-            background: var(--blue); transform: translateY(-50%);
-            transition: width .45s ease;
-        }
-        .scope-st {
-            width: 30px; height: 30px; border-radius: 50%;
-            border: 2px solid var(--line); background: #fff;
-            font-size: 10px; font-weight: 800; color: var(--muted);
-            position: relative; z-index: 1; cursor: pointer; font-family: inherit;
-            transition: background .25s, border-color .25s, color .25s, transform .25s;
-        }
-        .scope-st.on {
-            background: var(--navy); border-color: var(--accent); color: var(--accent-light);
-            transform: scale(1.12);
-        }
-        .scope-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
-        .scope-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px; padding: 0; cursor: pointer; height: auto;
-            box-shadow: none; position: relative; overflow: hidden;
-            transition: border-color .25s, transform .25s, background .25s;
-        }
-        .scope-card::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
-            background: var(--blue); transition: width .28s ease;
-        }
-        .scope-card:hover { transform: translateY(-4px); }
-        .scope-card.open {
-            border-color: var(--blue);
-            background: #F7F8FB;
-            box-shadow: none;
-            transform: translateY(-4px);
-        }
-        .scope-card.open::before { width: 4px; }
-        .scope-head {
-            width: 100%; background: none; border: 0; text-align: left; cursor: pointer;
-            padding: 18px 16px; display: flex; align-items: center; gap: 10px; font-family: inherit; color: var(--ink);
-        }
-        .scope-ico {
-            width: 38px; height: 38px; border-radius: 50%; background: var(--blue-soft); flex-shrink: 0;
-            display: flex; align-items: center; justify-content: center;
-            transition: background .25s, color .25s;
-        }
-        .scope-card.open .scope-ico { background: var(--accent); }
-        .scope-card.open .scope-ico .ico { color: var(--navy); }
-        .scope-ico .ico { width: 18px; height: 18px; }
-        .scope-no { font-size: 12px; font-weight: 800; color: var(--blue); letter-spacing: .4px; }
-        .scope-titles { flex: 1; min-width: 0; }
-        .scope-head h3 { font-size: 15px; word-break: keep-all; line-height: 1.35; }
-        .scope-teaser { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); word-break: keep-all; }
-        .scope-plus { color: var(--blue); font-size: 22px; font-weight: 400; line-height: 1; }
-        .scope-card .scope-body { display: none; }
-        .scope-panel {
-            margin-top: 16px;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-left: 4px solid var(--blue);
-            border-radius: 12px;
-            padding: 28px 32px;
-            display: grid; grid-template-columns: 1fr 120px; gap: 24px; align-items: start;
-            box-shadow: none;
-        }
-        .scope-panel.in { animation: scopeIn .4s ease; }
-        @keyframes scopeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: none; }
-        }
-        .scope-badge {
-            display: inline-block; font-size: 11px; font-weight: 800;
-            letter-spacing: 1.2px; color: var(--blue); margin-bottom: 8px;
-        }
-        .scope-panel h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 10px; }
-        .scope-panel p { color: var(--muted); font-size: 14px; line-height: 1.75; word-break: keep-all; margin-bottom: 14px; }
-        .scope-panel ul { margin: 0; padding: 0; list-style: none; }
-        .scope-panel li {
-            position: relative; padding: 5px 0 5px 18px;
-            font-size: 14px; color: var(--ink); word-break: keep-all;
-        }
-        .scope-panel li::before {
-            content: ''; position: absolute; left: 0; top: 11px;
-            width: 7px; height: 7px; border-radius: 50%; background: var(--blue-mid);
-        }
-        .scope-art { position: relative; height: 120px; }
-        .scope-art span {
-            position: absolute; right: 0; width: 78px; height: 100px; border-radius: 12px;
-            background: linear-gradient(180deg, #fff, #F7F1E3);
-            border: 1px solid #E8DFC8;
-            box-shadow: 0 14px 24px rgba(196,160,74,.14);
-        }
-        .scope-art span:nth-child(1) { transform: rotate(-16deg) translate(-10px, 8px); opacity: .7; }
-        .scope-art span:nth-child(2) { transform: rotate(-6deg) translate(-2px, 2px); opacity: .88; }
-        .scope-art span:nth-child(3) {
-            transform: rotate(8deg);
-            display: flex; align-items: flex-end; justify-content: flex-end;
-            padding: 10px; animation: paperFloat 2.8s ease-in-out infinite;
-        }
-        .scope-art span:nth-child(3)::after {
-            content: ''; width: 14px; height: 14px; border-radius: 4px; background: var(--blue-mid);
-        }
-        @keyframes paperFloat {
-            0%,100% { transform: rotate(8deg) translateY(0); }
-            50% { transform: rotate(8deg) translateY(-6px); }
-        }
-
-        .cases { background: #fff; }
-        .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
-        .case {
-            background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--line);
-            transition: transform .3s, border-color .3s;
-        }
-        .case:hover { transform: translateY(-4px); border-color: #C9D0DC; }
-        .case-media {
-            position: relative; height: 168px; overflow: hidden; background: #EEF0F4;
-        }
-        .case-img {
-            width: 100%; height: 100%; object-fit: cover; display: block;
-            filter: saturate(.7) contrast(1.02);
-            transition: transform .6s ease;
-        }
-        .case:hover .case-img { transform: scale(1.04); }
-        .case-body { padding: 22px 24px 26px; }
-        .case .tag { font-size: 11px; color: var(--blue); font-weight: 700; margin-bottom: 10px; }
-        .case h3 { font-size: 18px; margin-bottom: 10px; }
-        .case p { font-size: 14px; color: var(--muted); line-height: 1.8; }
-        .note { margin-top: 16px; font-size: 12px; color: #8A90A0; }
-
-        .reviews { background: #E5EAF2; overflow: hidden; }
-        .slider-wrap { position: relative; margin-top: 40px; }
-        .slider-arrow {
-            width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line);
-            background: #fff; color: var(--ink); font-size: 16px; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
-            box-shadow: 0 6px 18px rgba(26,39,68,.08);
-        }
-        .slider-arrow.left { left: 8px; }
-        .slider-arrow.right { right: 8px; }
-        .slider-arrow:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
-        .slider-viewport { overflow: hidden; padding: 8px 56px 12px; }
-        .slider-track { display: flex; gap: 18px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
-        .review-card {
-            flex: 0 0 calc(33.333% - 12px); min-width: 0;
-            background: #fff; border: 1px solid var(--line); border-radius: 12px;
-            padding: 28px 24px; position: relative;
-            transition: transform .3s, border-color .3s;
-        }
-        .review-card:hover { transform: translateY(-4px); border-color: #C9D0DC; }
-        .review-card::before {
-            content: '"'; position: absolute; top: 16px; right: 22px;
-            font-size: 52px; color: rgba(196,160,74,.22); line-height: 1; font-weight: 700;
-        }
-        .review-stars { color: var(--blue-mid); font-size: 13px; margin-bottom: 12px; letter-spacing: 2px; }
-        .review-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
-        .review-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
-        .review-author {
-            margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line);
-            font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px;
-        }
-        .review-author-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue-mid); flex-shrink: 0; }
-        .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
-        .slider-dot {
-            width: 8px; height: 8px; border-radius: 50%; background: var(--line);
-            border: 0; cursor: pointer; padding: 0; transition: background .2s, transform .2s;
-        }
-        .slider-dot.active { background: var(--blue-mid); transform: scale(1.25); }
-
-        .ceo-sec { background: #fff; }
-        .ceo {
-            display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center;
-        }
-        .ceo blockquote { font-size: 26px; line-height: 1.4; font-weight: 700; letter-spacing: -0.5px; margin: 16px 0 16px; }
-        .ceo p { color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 460px; }
-        .ceo-photo img { width: 100%; height: auto; display: block; border-radius: 18px; }
-        .ceo-sign { margin-top: 22px; font-size: 13px; color: var(--ink); font-weight: 700; font-family: var(--serif); }
-        .ceo-sign small { display: block; font-weight: 400; color: var(--muted); margin-top: 4px; }
-
-        .faq-sec {
-            position: relative;
-            overflow: hidden;
-            background: #E6EAF1;
-        }
-        .faq-sec::before {
-            content: '';
-            position: absolute; inset: 0;
-            background-image: repeating-linear-gradient(-12deg, rgba(18,26,44,.04) 0 1px, transparent 1px 16px);
-            mask-image: radial-gradient(ellipse at 50% 40%, #000 8%, transparent 78%);
-            pointer-events: none;
-        }
-        .faq-sec::after {
-            content: '';
-            position: absolute; inset: 0;
-            background-image: radial-gradient(rgba(18,26,44,.08) 1px, transparent 1px);
-            background-size: 18px 18px;
-            pointer-events: none;
-        }
-        .faq-sec .wrap { position: relative; z-index: 1; }
-        .faq-list {
-            margin-top: 28px;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            padding: 6px 28px;
-        }
-        .faq-item { border-bottom: 1px solid var(--line); }
-        .faq-item button {
-            width: 100%; background: none; border: 0; text-align: left; padding: 18px 4px;
-            font-size: 16px; font-weight: 700; cursor: pointer; font-family: var(--serif);
-            display: flex; justify-content: space-between;
-            transition: color .2s;
-        }
-        .faq-item button:hover { color: var(--blue); }
-        .faq-item p { display: none; padding: 0 4px 18px; color: var(--muted); font-size: 14px; line-height: 1.8; }
-        .faq-item.open p { display: block; }
-
-        .apply {
-            position: relative;
-            isolation: isolate;
-            clip-path: inset(0);
-            background: #E8EAEE;
-        }
-        .apply::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            background: url('images/form-bg.jpg') center / cover no-repeat;
-            pointer-events: none;
-        }
-        .apply::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background: rgba(6,14,36,0.9);
-            pointer-events: none;
-        }
-        .apply > .wrap { position: relative; z-index: 1; max-width: 720px; }
-        .apply .kicker { color: var(--accent-light); text-align: center; }
-        .apply h2 { color: #fff; text-align: center; }
-        .apply .lead { color: rgba(255,255,255,0.65); text-align: center; margin: 0 auto; }
-        .form-card {
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(196,160,74,0.28);
-            border-radius: 20px; padding: 36px; margin-top: 36px;
-            box-shadow: none; backdrop-filter: blur(8px);
-        }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        .field { display: flex; flex-direction: column; gap: 6px; }
-        .field label { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 500; }
-        .field input, .field select {
-            border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 12px 14px;
-            font-size: 14px; font-family: inherit; background: rgba(255,255,255,0.07); outline: none; color: #fff;
-        }
-        .field input::placeholder { color: rgba(255,255,255,0.3); }
-        .field input:focus, .field select:focus { border-color: rgba(196,160,74,0.7); box-shadow: 0 0 0 4px rgba(196,160,74,.16); background: rgba(255,255,255,0.1); }
-        .field select option { background: #1a2a4a; color: #fff; }
-        .agree { display: flex; gap: 8px; align-items: flex-start; margin: 16px 0 10px; font-size: 12px; color: rgba(255,255,255,0.5); }
-        .privacy {
-            max-height: 120px; overflow: auto; background: rgba(255,255,255,0.06); border-radius: 10px;
-            padding: 12px; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 16px;
-        }
-        .form-card .btn-primary { width: 100%; padding: 16px; }
-        .success { display: none; text-align: center; padding: 36px 10px; color: rgba(255,255,255,0.6); }
-        .success h3 { font-size: 22px; margin: 10px 0; color: #fff; }
-
-        footer { background: #060E1E; color: rgba(255,255,255,0.35); padding: 48px 0 28px; border-top: 1px solid rgba(196,160,74,0.15); }
-        .foot { display: flex; justify-content: space-between; gap: 40px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .foot img { height: 36px; margin-bottom: 14px; }
-        .foot a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; margin-bottom: 8px; }
-        .foot a:hover { color: rgba(255,255,255,0.85); }
-        .copy { padding-top: 18px; font-size: 11px; color: rgba(255,255,255,0.25); }
-
-        .float {
-            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
-            z-index: 40; display: flex; flex-direction: column; gap: 10px;
-        }
-        .float a {
+        .pain-section {
+            position: relative; padding: 100px 60px;
+            background: url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1400&q=70') center/cover fixed;
+        }
+        .pain-overlay { position: absolute; inset: 0; background: rgba(210, 222, 236, 0.9); }
+        .pain-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 70px; }
+        .pain-card {
+            background: rgba(10, 24, 52, 0.84); border: 1px solid rgba(78,138,212,0.22);
+            border-radius: 16px; padding: 32px 28px; text-align: center; color: var(--white);
+            backdrop-filter: blur(4px); transition: transform .25s, border-color .25s;
+        }
+        .pain-card:hover { transform: translateY(-4px); border-color: rgba(78,138,212,0.6); }
+        .pain-card-icon {
             width: 48px; height: 48px; border-radius: 50%;
+            background: rgba(78,138,212,0.18); border: 1.5px solid rgba(78,138,212,0.45);
             display: flex; align-items: center; justify-content: center;
-            background: #fff; color: var(--ink); text-decoration: none;
-            border: 1px solid rgba(220,230,242,.95);
-            box-shadow: 0 10px 24px rgba(26,39,68,.12);
-            transition: transform .2s, box-shadow .2s;
+            font-size: 20px; margin: 0 auto 16px;
         }
-        .float a:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(26,39,68,.16); }
-        .float svg { width: 20px; height: 20px; display: block; }
-        .float .consult {
-            background: linear-gradient(180deg, var(--accent-light), var(--accent));
-            border-color: var(--accent); color: var(--navy);
-            animation: pulse 2.4s ease-in-out infinite;
+        .pain-card-text { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.9); }
+        .pain-answer { text-align: center; }
+        .pain-dots { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 28px; }
+        .pain-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--navy-light); opacity: .5; }
+        .pain-dot:first-child { opacity: 1; background: var(--navy); }
+        .pain-answer-mid { font-family: 'Noto Serif KR', serif; font-size: 30px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+        .pain-answer-box {
+            display: inline-block; background: var(--navy); color: var(--mint-light);
+            font-family: 'Noto Serif KR', serif; font-size: 26px; font-weight: 700;
+            padding: 14px 48px; border-radius: 6px; margin-bottom: 24px;
+            border: 1.5px solid var(--mint);
         }
-        @keyframes pulse {
-            0%,100% { box-shadow: 0 10px 24px rgba(196,160,74,.28); }
-            50% { box-shadow: 0 12px 34px rgba(196,160,74,.55); }
-        }
-        .float .naver { color: #03C75A; }
-        .float .kakao { color: #3C1E1E; }
-        .float .insta { color: #C13584; }
-        .float .yt { color: #FF0000; }
+        .pain-answer-desc { font-size: 16px; color: #1a2a40; line-height: 1.9; }
+        .pain-answer-desc strong { font-weight: 700; color: var(--navy); }
 
-        .anim { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
-        .anim.from-left { transform: translateX(-36px); }
-        .anim.from-right { transform: translateX(36px); }
-        .anim.from-scale { transform: scale(.96); }
-        .anim.show { opacity: 1; transform: none; }
-        .path-item.on.show, .path-item.on.show:hover { transform: translateY(-4px); }
-        .scope-card.open.show { transform: translateY(-4px); }
+        .stats-section { background: var(--navy); padding: 80px 60px; position: relative; overflow: hidden; }
+        .stats-section::before, .stats-section::after {
+            content: ''; position: absolute; border-radius: 50%;
+        }
+        .stats-section::before { top: -60px; right: -60px; width: 300px; height: 300px; border: 60px solid rgba(78,138,212,0.07); }
+        .stats-section::after { bottom: -80px; left: 10%; width: 200px; height: 200px; border: 40px solid rgba(78,138,212,0.06); }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+            max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;
+        }
+        .stat-item { text-align: center; transition: transform .3s ease; }
+        .stat-item:hover { transform: translateY(-6px); }
+        .stat-num {
+            font-family: 'Noto Serif KR', serif; font-size: 48px; font-weight: 900;
+            color: var(--mint-light); line-height: 1; margin-bottom: 14px; letter-spacing: -1px;
+            transition: text-shadow .3s;
+        }
+        .stat-item:hover .stat-num { text-shadow: 0 0 28px rgba(196,160,74,0.5); }
+        .stat-suffix { font-size: 28px; font-weight: 900; margin-left: 1px; }
+        .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 1px; line-height: 1.6; }
+
+        .why-section { padding: 100px 60px; background: var(--off-white); }
+        .why-header { text-align: center; margin-bottom: 60px; }
+        .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+        .why-card {
+            background: var(--white); border: 1px solid var(--gray-100); border-radius: 16px;
+            padding: 36px 32px; display: flex; gap: 20px; align-items: flex-start;
+            transition: box-shadow .25s, transform .25s;
+        }
+        .why-card:hover { box-shadow: 0 12px 40px rgba(10,24,52,0.1); transform: translateY(-3px); }
+        .why-num { font-family: 'Noto Serif KR', serif; font-size: 36px; font-weight: 900; color: rgba(196,160,74,0.35); line-height: 1; flex-shrink: 0; width: 40px; }
+        .why-text-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+        .why-text-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+
+        .ceo-section { padding: 100px 60px; background: var(--white); }
+        .ceo-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center; }
+        .ceo-img-wrap { position: relative; }
+        .ceo-img {
+            width: 100%; height: auto; object-fit: contain; object-position: center top;
+            border-radius: 16px; border: 2px solid var(--gray-100); display: block; background: #c8cbd4;
+        }
+        .ceo-gold-bar {
+            position: absolute; bottom: 28px; right: -20px;
+            background: var(--navy); border: 1.5px solid var(--mint);
+            border-radius: 10px; padding: 16px 22px; color: var(--white);
+        }
+        .ceo-gold-bar-title { font-size: 11px; color: var(--mint-light); letter-spacing: 2px; margin-bottom: 4px; }
+        .ceo-gold-bar-val { font-size: 22px; font-weight: 700; }
+        .ceo-badge { font-size: 11px; letter-spacing: 4px; color: var(--mint); font-weight: 600; margin-bottom: 16px; }
+        .ceo-title { font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
+        .ceo-divider { width: 48px; height: 2px; background: var(--mint); margin-bottom: 28px; }
+        .ceo-desc { font-size: 15px; color: var(--gray-600); line-height: 2; margin-bottom: 32px; }
+        .ceo-signature { padding-top: 24px; border-top: 1px solid var(--gray-100); }
+        .ceo-sig-name { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; }
+        .ceo-sig-title { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; margin-top: 4px; }
+
+        .services-section { padding: 100px 60px; background: var(--navy); position: relative; overflow: hidden; }
+        .services-section::before {
+            content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=60') center/cover;
+            opacity: .08;
+        }
+        .services-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        .services-header { margin-bottom: 60px; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(78,138,212,0.2);
+            border-radius: 14px; padding: 32px 28px;
+            transition: background .25s, border-color .25s;
+        }
+        .service-card:hover { background: rgba(78,138,212,0.1); border-color: rgba(78,138,212,0.5); }
+        .service-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 12px; display: block; }
+        .service-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+
+        .process-section { padding: 100px 60px; background: var(--off-white); }
+        .process-header { text-align: center; margin-bottom: 70px; }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+            max-width: 1100px; margin: 0 auto; position: relative;
+        }
+        .process-steps::before {
+            content: ''; position: absolute; top: 32px; left: 12.5%; right: 12.5%; height: 2px;
+            background: linear-gradient(to right, var(--mint), var(--accent)); opacity: .4;
+        }
+        .process-step { text-align: center; padding: 0 16px; position: relative; }
+        .process-circle {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: var(--navy); border: 2px solid var(--mint);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 900; color: var(--mint-light);
+            margin: 0 auto 24px; position: relative; z-index: 2;
+            box-shadow: 0 4px 16px rgba(10,24,52,0.18);
+        }
+        .process-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+        .process-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+        .reviews-section { padding: 100px 0 80px; background: var(--white); overflow: hidden; }
+        .reviews-header { text-align: center; margin-bottom: 56px; padding: 0 60px; }
+        .slider-wrap { position: relative; }
+        .slider-arrow {
+            width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--gray-100);
+            background: var(--white); color: var(--text-dark); font-size: 18px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background .2s, border-color .2s, color .2s;
+            z-index: 2; position: absolute; top: 50%; transform: translateY(-50%);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        .slider-arrow.left { left: 16px; }
+        .slider-arrow.right { right: 16px; }
+        .slider-arrow:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+        .slider-viewport { width: 100%; overflow: hidden; padding: 12px 0 16px; }
+        .slider-track { display: flex; gap: 24px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; padding: 0 60px; }
+        .review-card {
+            flex: 0 0 calc(33.333% - 16px); min-width: 0;
+            background: var(--off-white); border: 1px solid var(--gray-100);
+            border-radius: 16px; padding: 32px 28px; position: relative;
+        }
+        .review-card::before {
+            content: '"'; position: absolute; top: 20px; right: 24px;
+            font-family: 'Noto Serif KR', serif; font-size: 60px; color: rgba(78,138,212,0.2); line-height: 1;
+        }
+        .review-stars { color: var(--mint); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+        .review-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
+        .review-text { font-size: 13px; color: var(--gray-600); line-height: 1.8; }
+        .review-author {
+            margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray-100);
+            font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
+        }
+        .review-author-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint); flex-shrink: 0; }
+        .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 32px; }
+        .slider-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: var(--gray-100);
+            border: none; cursor: pointer; transition: background .2s, transform .2s; padding: 0;
+        }
+        .slider-dot.active { background: var(--navy); transform: scale(1.25); }
+
+        .form-section { position: relative; padding: 100px 60px; }
+        .form-bg {
+            position: absolute; inset: 0;
+            background: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1400&q=70') center/cover fixed;
+        }
+        .form-overlay { position: absolute; inset: 0; background: rgba(6,14,36,0.9); }
+        .form-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+        .form-header { text-align: center; margin-bottom: 48px; }
+        .form-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(78,138,212,0.28);
+            border-radius: 20px; padding: 48px 40px; backdrop-filter: blur(8px);
+        }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group.full { grid-column: 1/-1; }
+        .form-label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); letter-spacing: .5px; }
+        .form-group input, .form-group select {
+            background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+            color: var(--white); border-radius: 8px; padding: 12px 16px; font-size: 14px;
+            font-family: inherit; transition: border-color .2s, background .2s; outline: none;
+            appearance: none;
+        }
+        .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+        .form-group input:focus, .form-group select:focus {
+            border-color: rgba(78,138,212,0.7); background: rgba(255,255,255,0.1);
+        }
+        .form-group select option { background: #1a2a4a; color: #fff; }
+        .form-agree { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0 16px; }
+        .form-agree input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--mint); cursor: pointer; }
+        .form-agree-label { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.7; cursor: pointer; }
+        .privacy-box {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px; padding: 14px 16px; margin-bottom: 20px;
+            max-height: 140px; overflow-y: auto; font-size: 11px;
+            color: rgba(255,255,255,0.45); line-height: 1.8;
+        }
+        .privacy-box strong { color: rgba(255,255,255,0.65); }
+        .form-submit {
+            width: 100%; padding: 18px; background: linear-gradient(180deg, var(--mint-light), var(--mint)); border: none; color: var(--navy);
+            font-size: 16px; font-weight: 700; font-family: inherit; border-radius: 8px;
+            cursor: pointer; letter-spacing: 1px; transition: background .2s, transform .2s;
+            box-shadow: 0 8px 24px rgba(196,160,74,0.32);
+        }
+        .form-submit:hover { background: var(--mint-light); color: var(--navy); transform: translateY(-2px); }
+        .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+        .form-success { display: none; text-align: center; padding: 40px 0; }
+        .form-success-icon { font-size: 48px; margin-bottom: 16px; }
+        .form-success-title { font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+        .form-success-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+
+        footer { background: #060E1E; padding: 56px 60px 36px; border-top: 1px solid rgba(78,138,212,0.15); }
+        .footer-top {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 32px;
+        }
+        .footer-brand { max-width: 340px; }
+        .footer-logo { display: inline-flex; align-items: center; background: none; padding: 0; margin-bottom: 20px; }
+        .footer-logo img { height: 36px; width: auto; display: block; }
+        .footer-brand-desc { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.8; }
+        .footer-links-group { display: flex; gap: 60px; }
+        .footer-links-title { font-size: 11px; letter-spacing: 2px; color: var(--mint-light); font-weight: 600; margin-bottom: 16px; }
+        .footer-links a {
+            display: block; font-size: 13px; color: rgba(255,255,255,0.45);
+            text-decoration: none; margin-bottom: 10px; transition: color .2s;
+        }
+        .footer-links a:hover { color: rgba(255,255,255,0.85); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+        .footer-info, .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 2; }
+
+        .nav-hamburger {
+            display: none; flex-direction: column; justify-content: center; gap: 5px;
+            width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 1001;
+        }
+        .nav-hamburger span { display: block; width: 100%; height: 2px; background: var(--white); border-radius: 2px; transition: transform .3s, opacity .3s; }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .nav-drawer {
+            display: none; position: fixed; inset: 0; background: rgba(6,14,32,0.97);
+            z-index: 990; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+            opacity: 0; transition: opacity .3s; pointer-events: none;
+        }
+        .nav-drawer.open { opacity: 1; pointer-events: all; }
+        .nav-drawer a {
+            color: rgba(255,255,255,0.85); font-size: 22px; font-weight: 500; text-decoration: none;
+            padding: 14px 32px; width: 260px; text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .nav-drawer a:last-child {
+            margin-top: 16px; background: linear-gradient(180deg, var(--mint-light), var(--mint)); color: var(--navy);
+            border-radius: 8px; border-bottom: none; font-weight: 700;
+        }
+
+        .anim { opacity: 0; transition: opacity .65s ease, transform .65s ease; }
+        .anim.from-bottom { transform: translateY(40px); }
+        .anim.from-left { transform: translateX(-40px); }
+        .anim.from-right { transform: translateX(40px); }
+        .anim.from-scale { transform: scale(0.94); }
+        .anim.visible { opacity: 1; transform: translate(0,0) scale(1); }
+        .delay-1 { transition-delay: .1s; }
+        .delay-2 { transition-delay: .2s; }
+        .delay-3 { transition-delay: .3s; }
+        .delay-4 { transition-delay: .4s; }
 
         @media (prefers-reduced-motion: reduce) {
-            .anim { opacity: 1; transform: none; transition: none; }
-            .trust, .hero-scroll, .float .consult, .path-deco-line, .diag-radar .sweep, .diag-radar i,
-            .hero-copy .eyebrow, .hero-copy h1, .hero-copy p, .hero-copy .hero-badges, .hero-copy .hero-actions { animation: none; }
-            .btn-primary::after { animation: none; }
-            .hero-glow { opacity: 0 !important; }
-            .scope-art span:nth-child(3) { animation: none; }
-            .path-item:hover, .scope-card:hover, .case:hover, .review-card:hover, .btn:hover, .chip:hover { transform: none; }
+            .anim { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .ticker-inner, .hero-content, .hero-scroll { animation: none; }
         }
+
         @media (max-width: 900px) {
-            .nav { padding: 0 16px; height: 60px; }
+            .nav { padding: 0 20px; height: 60px; }
             .nav-links { display: none; }
-            .hamburger { display: block; }
-            .drawer { inset: 60px 0 0; }
+            .nav-hamburger { display: flex; }
+            .nav-drawer { display: flex; }
+            .nav-logo img { height: 34px; }
             .hero { height: 100svh; min-height: 560px; }
-            .hero-copy { padding: 88px 20px 48px; }
-            .hero-wash {
+            .hero-overlay {
                 background: linear-gradient(160deg, rgba(8,20,44,0.84) 0%, rgba(10,24,52,0.8) 55%, rgba(16,36,72,0.88) 100%);
             }
-            .hero h1 { font-size: 32px; letter-spacing: -0.6px; }
-            .hero p { font-size: 16px; margin-bottom: 18px; }
-            .hero-badge { font-size: 12px; padding: 7px 14px; }
-            .hero-actions { margin-top: 20px; }
+            .hero-title { font-size: 34px; }
+            .hero-desc { font-size: 16px; color: rgba(255,255,255,0.9); }
+            .hero-badge { font-size: 12px; }
             .hero-scroll { display: none; }
-            .trust-item { padding: 14px 24px; font-size: 13px; }
-            .path-track { max-width: 280px; }
-            .scope-panel { grid-template-columns: 1fr; }
-            .scope-art { display: none; }
-            .diag-result { flex-direction: column; align-items: stretch; }
-            .chips, .case-grid, .ceo, .grid, .foot, .path, .scope-grid { grid-template-columns: 1fr; }
-            .ceo-photo { order: -1; }
-            .hero-scroll { bottom: 18px; }
-            .review-card { flex: 0 0 86%; }
-            .slider-arrow { width: 38px; height: 38px; }
-            .slider-arrow.left { left: 0; }
-            .slider-arrow.right { right: 0; }
-            .wrap { width: calc(100% - 32px); }
-            section.block { padding: 64px 0; }
-            h2 { font-size: 26px; }
-            .float {
-                top: auto; bottom: 12px; transform: none; left: 0; right: 0;
-                flex-direction: row; gap: 10px; justify-content: center;
-                pointer-events: none;
+            .pain-section, .why-section, .ceo-section, .services-section, .process-section, .form-section { padding: 70px 20px; }
+            .pain-section, .form-bg { background-attachment: scroll; }
+            .pain-grid { grid-template-columns: 1fr; gap: 14px; }
+            .pain-answer-box { font-size: 20px; padding: 12px 24px; }
+            .pain-answer-mid { font-size: 24px; }
+            .stats-section { padding: 56px 20px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+            .stat-num { font-size: 32px; }
+            .why-grid { grid-template-columns: 1fr; }
+            .ceo-inner { grid-template-columns: 1fr; gap: 36px; }
+            .ceo-img-wrap { order: -1; }
+            .ceo-gold-bar { right: 12px; bottom: -16px; }
+            .services-section::before { display: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
+            .process-steps::before { display: none; }
+            .reviews-header { padding: 0 20px; }
+            .slider-track { padding: 0 20px; gap: 16px; }
+            .review-card { flex: 0 0 80vw; }
+            .slider-arrow { width: 38px; height: 38px; font-size: 14px; }
+            .slider-arrow.left { left: 4px; }
+            .slider-arrow.right { right: 4px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 28px 20px; }
+            footer { padding: 44px 20px 88px; }
+            .footer-top, .footer-bottom { flex-direction: column; gap: 28px; align-items: flex-start; }
+            .section-title { font-size: 28px; }
+            .float-side {
+                position: fixed; bottom: 0; top: auto; left: 0; right: 0;
+                transform: none; flex-direction: row; gap: 0;
+                border-top: 1px solid rgba(255,255,255,0.12);
             }
-            .float a { pointer-events: auto; flex: 0 0 46px; width: 46px; height: 46px; }
-            footer { padding-bottom: 76px; }
+            .float-btn { flex: 1; width: auto; height: 58px; border-radius: 0; box-shadow: none; font-size: 8px; }
+            .float-btn.consult { font-size: 11px; }
+            .float-btn:hover { transform: none; }
+            .float-icon { font-size: 14px; }
+            .float-btn svg { width: 16px; height: 16px; }
         }
         @media (max-width: 480px) {
-            .hero h1 { font-size: 28px; }
-            .hero p { font-size: 15px; }
-            .hero-actions { flex-direction: column; }
-            .hero-actions .btn { width: 100%; }
+            .hero-title { font-size: 28px; }
+            .hero-desc { font-size: 15px; }
+            .hero-btn { width: 100%; }
+            .process-steps { grid-template-columns: 1fr; }
+            .review-card { flex: 0 0 88vw; }
+            .section-title { font-size: 24px; }
         }
     </style>
 </head>
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-        <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-        <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
-        <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
-        <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
-        <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
-        <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></symbol>
-        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-        <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18 2 22V6l7-4 8 4 7-4v16l-7 4-8-4z"/><path d="M9 4v14M17 8v14"/></symbol>
-        <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></symbol>
-        <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5.5"/><path d="m8.2 13.6-1.4 8.4L12 19l5.2 3-1.4-8.4"/></symbol>
-        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-        <symbol id="i-next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M13 8l4 4-4 4"/></symbol>
-        <symbol id="i-consult" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-        <symbol id="i-naver" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 4H20v16h-4.7l-6.1-8.9V20H4V4h4.7l6.1 8.9V4z"/></symbol>
-        <symbol id="i-kakao" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.15.56-.96 3.5-1 3.66 0 0-.02.18.1.25.12.07.26 0 .26 0 .34-.05 4-2.62 4.63-3.05.43.06.86.1 1.31.1 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></symbol>
-        <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
-        <symbol id="i-youtube" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12.2s0-3.3-.4-4.8c-.2-.9-.9-1.6-1.8-1.8C19.2 5.2 12 5.2 12 5.2s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.9 1 12.2 1 12.2s0 3.3.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.8.4-4.8zM9.8 15.6V8.8l6.2 3.4-6.2 3.4z"/></symbol>
-    </svg>
-    <div class="progress" id="progress"></div>
-    <nav class="nav">
-        <a class="nav-logo" href="#top"><img src="images/logo-white.png" alt="이음비즈솔루션"></a>
+    <!-- SNS 주소는 href만 교체하면 됩니다 -->
+    <div class="float-side">
+        <a class="float-btn consult" href="#apply">무료<br>상담</a>
+        <a class="float-btn naver" href="https://blog.naver.com/" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그">
+            <span style="font-size:11px;font-weight:800;letter-spacing:-0.3px;">N</span>
+            <span>네이버</span>
+        </a>
+        <a class="float-btn kakao" href="https://pf.kakao.com/" target="_blank" rel="noopener noreferrer" aria-label="카카오톡">
+            <span class="float-icon">💬</span>
+            <span>카카오</span>
+        </a>
+        <a class="float-btn insta" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="인스타그램">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+            <span>인스타</span>
+        </a>
+        <a class="float-btn channel" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="유튜브 채널">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M23.5 6.2a3.05 3.05 0 0 0-2.15-2.16C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.35.44A3.05 3.05 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3.05 3.05 0 0 0 2.15 2.16C4.5 20.4 12 20.4 12 20.4s7.5 0 9.35-.44a3.05 3.05 0 0 0 2.15-2.16A31.9 31.9 0 0 0 24 12a31.9 31.9 0 0 0-.5-5.8zM9.75 15.57V8.43L15.84 12l-6.09 3.57z"/>
+            </svg>
+            <span>채널</span>
+        </a>
+    </div>
+
+    <nav class="nav" id="nav">
+        <a href="#top" class="nav-logo">
+            <img src="images/logo-white.png" alt="이음비즈솔루션">
+        </a>
         <div class="nav-links">
-            <a href="#diagnose">현황 진단</a>
-            <a href="#path">진행 방식</a>
-            <a href="#services">업무 범위</a>
-            <a href="#reviews">후기</a>
-            <a href="#faq">FAQ</a>
-            <a href="#apply" class="nav-cta">상담 남기기</a>
+            <a href="#about">기업소개</a>
+            <a href="#services">서비스</a>
+            <a href="#process">진행절차</a>
+            <a href="#reviews">성공사례</a>
+            <a href="#apply" class="nav-cta">무료 상담 신청</a>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span><span></span></button>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
-    <div class="drawer" id="drawer">
-        <a href="#diagnose">현황 진단</a>
-        <a href="#path">진행 방식</a>
-        <a href="#services">업무 범위</a>
-        <a href="#reviews">후기</a>
-        <a href="#faq">FAQ</a>
-        <a href="#apply">상담 남기기</a>
+
+    <div class="nav-drawer" id="navDrawer">
+        <a href="#about" class="drawer-link">기업소개</a>
+        <a href="#services" class="drawer-link">서비스</a>
+        <a href="#process" class="drawer-link">진행절차</a>
+        <a href="#reviews" class="drawer-link">성공사례</a>
+        <a href="#apply" class="drawer-link">무료 상담 신청</a>
     </div>
 
-    <div class="float">
-        <a class="consult" href="#apply" aria-label="상담 신청" title="상담 신청"><svg><use href="#i-consult"/></svg></a>
-        <a class="naver" href="https://blog.naver.com/" target="_blank" rel="noopener" aria-label="네이버 블로그" title="네이버 블로그"><svg><use href="#i-naver"/></svg></a>
-        <a class="kakao" href="https://pf.kakao.com/" target="_blank" rel="noopener" aria-label="카카오톡" title="카카오톡"><svg><use href="#i-kakao"/></svg></a>
-        <a class="insta" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="인스타그램" title="인스타그램"><svg><use href="#i-insta"/></svg></a>
-        <a class="yt" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="유튜브 채널" title="유튜브 채널"><svg><use href="#i-youtube"/></svg></a>
-    </div>
-
-    <header class="hero" id="top">
-        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="images/city-bg.jpg">
-            <source src="https://assets.mixkit.co/videos/49824/49824-720.mp4" type="video/mp4">
-        </video>
-        <div class="hero-wash"></div>
-        <div class="hero-glow" id="heroGlow"></div>
-        <div class="hero-copy">
-            <div class="eyebrow">POLICY FUND CONSULTING</div>
-            <h1>자금이 아니라,<br><span>지금 상황에 맞는 길을 잇습니다.</span></h1>
-            <p>현황을 듣고, 지금 열어볼 수 있는 경로만 정리합니다.</p>
+    <section class="hero" id="top">
+        <div class="hero-bg">
+            <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="https://assets.mixkit.co/videos/49824/49824-thumb-720-0.jpg">
+                <source src="https://assets.mixkit.co/videos/49824/49824-720.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">POLICY FUND CONSULTING</span>
+            <h1 class="hero-title">정책자금, 이제는<br><em>전문가에게 맡기세요.</em></h1>
+            <p class="hero-desc">수천억 원의 정부 지원금이 매년 소멸됩니다.<br>지금 운영 중인 대표님의 기업에 맞는 자금을 빠르게 찾아드립니다.</p>
             <div class="hero-badges">
-                <span class="hero-badge">무료 초진</span>
-                <span class="hero-badge">당일 정리</span>
-                <span class="hero-badge">전국 비대면</span>
-                <span class="hero-badge">전담 1인</span>
+                <span class="hero-badge">✓ 무료 초기 진단</span>
+                <span class="hero-badge">✓ 당일 응답 원칙</span>
+                <span class="hero-badge">✓ 전국 비대면 가능</span>
+                <span class="hero-badge">✓ 1:1 전담 컨설팅</span>
             </div>
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="#apply">무료로 현황 남기기</a>
-                <a class="btn btn-ghost" href="#diagnose">내 상황 먼저 보기</a>
-            </div>
+            <a href="#apply" class="hero-btn">지금 바로 무료 상담 신청 →</a>
         </div>
-        <a class="hero-scroll" href="#diagnose">SCROLL<span class="scroll-line"></span></a>
-    </header>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            SCROLL
+        </div>
+    </section>
 
-    <div class="trust-wrap">
-        <div class="trust">
-            <div class="trust-set">
-                <span class="trust-item"><i class="trust-dot"></i>무료 초진</span>
-                <span class="trust-item"><i class="trust-dot"></i>당일 정리</span>
-                <span class="trust-item"><i class="trust-dot"></i>전담 1인</span>
-                <span class="trust-item"><i class="trust-dot"></i>전국 비대면</span>
-                <span class="trust-item"><i class="trust-dot"></i>운영·시설 자금</span>
-                <span class="trust-item"><i class="trust-dot"></i>서류 순서</span>
-                <span class="trust-item"><i class="trust-dot"></i>보증 연계</span>
-                <span class="trust-item"><i class="trust-dot"></i>인증 검토</span>
-                <span class="trust-item"><i class="trust-dot"></i>거절 이력</span>
-                <span class="trust-item"><i class="trust-dot"></i>신청 이후까지</span>
-            </div>
-            <div class="trust-set" aria-hidden="true">
-                <span class="trust-item"><i class="trust-dot"></i>무료 초진</span>
-                <span class="trust-item"><i class="trust-dot"></i>당일 정리</span>
-                <span class="trust-item"><i class="trust-dot"></i>전담 1인</span>
-                <span class="trust-item"><i class="trust-dot"></i>전국 비대면</span>
-                <span class="trust-item"><i class="trust-dot"></i>운영·시설 자금</span>
-                <span class="trust-item"><i class="trust-dot"></i>서류 순서</span>
-                <span class="trust-item"><i class="trust-dot"></i>보증 연계</span>
-                <span class="trust-item"><i class="trust-dot"></i>인증 검토</span>
-                <span class="trust-item"><i class="trust-dot"></i>거절 이력</span>
-                <span class="trust-item"><i class="trust-dot"></i>신청 이후까지</span>
-            </div>
-        </div>
+    <div class="ticker">
+        <div class="ticker-inner" id="tickerInner"></div>
     </div>
 
-    <section class="block diag" id="diagnose" data-pick="many">
-        <div class="diag-radar" aria-hidden="true">
-            <i></i><i></i><i></i>
-            <b class="sweep"></b>
-            <em data-key="many"></em>
-            <em data-key="docs"></em>
-            <em data-key="reject"></em>
-            <em data-key="urgent"></em>
-        </div>
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">SITUATION</div>
-                <h2>지금 어디에 가장 가깝나요?</h2>
-                <p class="lead">고르시면, 상담을 어디서 시작할지 알려 드립니다.</p>
+    <section class="pain-section" id="about">
+        <div class="pain-overlay"></div>
+        <div class="pain-inner">
+            <div class="anim from-bottom" style="text-align:center;margin-bottom:48px;">
+                <div class="section-label">WHY YOU NEED US</div>
+                <h2 class="section-title" style="color:var(--navy);">이런 고민, 혼자 안고 계셨나요?</h2>
             </div>
-            <div class="chips" id="chips">
-                <button class="chip active" data-key="many" type="button">
-                    <span class="chip-ico"><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg></span>
-                    <strong>제도가 너무 많음</strong>
-                    <em>무엇을 먼저 볼지 모릅니다.</em>
-                </button>
-                <button class="chip" data-key="docs" type="button">
-                    <span class="chip-ico"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg></span>
-                    <strong>서류에서 멈춤</strong>
-                    <em>목록은 있는데 손대기가 어렵습니다.</em>
-                </button>
-                <button class="chip" data-key="reject" type="button">
-                    <span class="chip-ico"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg></span>
-                    <strong>예전에 한 번 거절</strong>
-                    <em>다시 넣기 전, 원인을 알고 싶습니다.</em>
-                </button>
-                <button class="chip" data-key="urgent" type="button">
-                    <span class="chip-ico"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span>
-                    <strong>한도와 일정이 급함</strong>
-                    <em>운영·시설 자금이 당장 필요합니다.</em>
-                </button>
-            </div>
-            <div class="diag-result" id="diagResult">
-                <div>
-                    <h3>먼저 볼 것: 제도 지도</h3>
-                    <p>손댈 제도와 지금은 건너뛸 제도를 한 장으로 나눕니다.</p>
+            <div class="pain-grid">
+                <div class="pain-card anim from-left delay-1">
+                    <div class="pain-card-icon">🔍</div>
+                    <div class="pain-card-text">정책자금 종류가 너무 많아<br>어디서부터 시작해야 할지<br>막막합니다.</div>
                 </div>
-                <a class="btn btn-primary" href="#apply">이 내용으로 남기기</a>
-            </div>
-            <div class="bridge">
-                <a class="btn btn-ghost" href="#path">진행 방식 보기 →</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="block path-sec" id="path">
-        <svg class="path-deco" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
-            <path class="path-deco-line" d="M-40 260C180 70 380 310 600 150S1020 30 1240 210"/>
-            <path class="path-deco-line alt" d="M-40 310C220 130 400 350 640 190S1060 70 1240 270"/>
-        </svg>
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">HOW WE WORK</div>
-                <h2>세 번만 맞춰 가면 됩니다</h2>
-                <p class="lead">파일 없이, 아는 현황만 말씀해 주세요.</p>
-            </div>
-            <div class="path" id="pathSteps">
-                <article class="path-item anim on" data-step="0">
-                    <div class="path-top">
-                        <div class="path-copy">
-                            <div class="path-step">STEP 01</div>
-                            <h3>현황을 듣습니다</h3>
-                            <p>업종·매출·자금 성격만 듣습니다. 비용은 없습니다.</p>
-                            <div class="path-more">다음 단계 보기 →</div>
-                        </div>
-                        <div class="path-vis" aria-hidden="true"><div class="vis-card"><i></i><i></i><i></i></div></div>
-                    </div>
-                </article>
-                <article class="path-item anim" data-step="1">
-                    <div class="path-top">
-                        <div class="path-copy">
-                            <div class="path-step">STEP 02</div>
-                            <h3>갈 수 있는 길을 고릅니다</h3>
-                            <p>지금 열어볼 순서만 제안합니다. 여러 건을 한 번에 넣지 않습니다.</p>
-                            <div class="path-more">다음 단계 보기 →</div>
-                        </div>
-                        <div class="path-vis" aria-hidden="true">
-                            <div class="vis-sign"><div class="pole"></div><b>운영</b><b>시설</b></div>
-                        </div>
-                    </div>
-                </article>
-                <article class="path-item anim" data-step="2">
-                    <div class="path-top">
-                        <div class="path-copy">
-                            <div class="path-step">STEP 03</div>
-                            <h3>신청 이후까지 붙습니다</h3>
-                            <p>서류 보완과 다음 제도까지 이어서 봅니다.</p>
-                            <a class="path-more" href="#apply">현황 남기기 →</a>
-                        </div>
-                        <div class="path-vis" aria-hidden="true"><div class="vis-note"></div></div>
-                    </div>
-                </article>
-            </div>
-            <div class="path-track" id="pathTrack">
-                <div class="path-fill" id="pathFill"></div>
-                <button class="path-dot on" type="button" data-step="0" aria-label="1단계"><span>01</span></button>
-                <button class="path-dot" type="button" data-step="1" aria-label="2단계"><span>02</span></button>
-                <button class="path-dot" type="button" data-step="2" aria-label="3단계"><span>03</span></button>
-            </div>
-            <div class="bridge">
-                <a class="btn btn-ghost" href="#services">업무 범위 보기 →</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="block scope" id="services">
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">SCOPE</div>
-                <h2>필요한 구간만 이어 드립니다</h2>
-                <p class="lead">처음부터 끝까지도, 막힌 한 구간만도 가능합니다.</p>
-            </div>
-            <div class="scope-chain" id="scopeChain">
-                <div class="scope-fill" id="scopeFill"></div>
-                <button class="scope-st on" type="button" data-idx="0">01</button>
-                <button class="scope-st on" type="button" data-idx="1">02</button>
-                <button class="scope-st" type="button" data-idx="2">03</button>
-                <button class="scope-st" type="button" data-idx="3">04</button>
-                <button class="scope-st" type="button" data-idx="4">05</button>
-                <button class="scope-st" type="button" data-idx="5">06</button>
-            </div>
-            <div class="scope-grid" id="scopeGrid">
-                <article class="scope-card anim">
-                    <button class="scope-head" type="button">
-                        <span class="scope-ico"><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg></span>
-                        <span class="scope-no">01</span>
-                        <span class="scope-titles"><h3>정책자금 경로 정리</h3><small class="scope-teaser">지금 손댈 길만 남깁니다</small></span>
-                        <span class="scope-plus">+</span>
-                    </button>
-                    <div class="scope-body">
-                        <div>
-                            <ul><li>운영·시설·창업 구분</li><li>우선순위 한 장</li><li>지금은 건너뛸 제도</li></ul>
-                        </div>
-                        <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
-                    </div>
-                </article>
-                <article class="scope-card anim open">
-                    <button class="scope-head" type="button">
-                        <span class="scope-ico"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg></span>
-                        <span class="scope-no">02</span>
-                        <span class="scope-titles"><h3>서류 순서 안내</h3><small class="scope-teaser">필수와 나중을 나눕니다</small></span>
-                        <span class="scope-plus">−</span>
-                    </button>
-                    <div class="scope-body">
-                        <div>
-                            <ul><li>필수 서류 목록</li><li>제출 순서 가이드</li><li>나중에 맞춰도 되는 자료</li></ul>
-                        </div>
-                        <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
-                    </div>
-                </article>
-                <article class="scope-card anim">
-                    <button class="scope-head" type="button">
-                        <span class="scope-ico"><svg class="ico" aria-hidden="true"><use href="#i-pen"/></svg></span>
-                        <span class="scope-no">03</span>
-                        <span class="scope-titles"><h3>사업계획 포인트</h3><small class="scope-teaser">심사 지점만 다듬습니다</small></span>
-                        <span class="scope-plus">+</span>
-                    </button>
-                    <div class="scope-body">
-                        <div>
-                            <ul><li>시장·실행력</li><li>자금 사용처</li><li>반복 지적 지점</li></ul>
-                        </div>
-                        <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
-                    </div>
-                </article>
-                <article class="scope-card anim">
-                    <button class="scope-head" type="button">
-                        <span class="scope-ico"><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg></span>
-                        <span class="scope-no">04</span>
-                        <span class="scope-titles"><h3>인증·우대 조건</h3><small class="scope-teaser">지금 단계에 맞는지 봅니다</small></span>
-                        <span class="scope-plus">+</span>
-                    </button>
-                    <div class="scope-body">
-                        <div>
-                            <ul><li>단계 적합성</li><li>우대 조건</li><li>일정 낭비 방지</li></ul>
-                        </div>
-                        <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
-                    </div>
-                </article>
-                <article class="scope-card anim">
-                    <button class="scope-head" type="button">
-                        <span class="scope-ico"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span>
-                        <span class="scope-no">05</span>
-                        <span class="scope-titles"><h3>보증·신용 경로</h3><small class="scope-teaser">막히면 우회할 길을 봅니다</small></span>
-                        <span class="scope-plus">+</span>
-                    </button>
-                    <div class="scope-body">
-                        <div>
-                            <ul><li>신용·기술 보증</li><li>우회 경로</li><li>한 창구만 고집하지 않음</li></ul>
-                        </div>
-                        <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
-                    </div>
-                </article>
-                <article class="scope-card anim">
-                    <button class="scope-head" type="button">
-                        <span class="scope-ico"><svg class="ico" aria-hidden="true"><use href="#i-next"/></svg></span>
-                        <span class="scope-no">06</span>
-                        <span class="scope-titles"><h3>집행 이후 다음 수순</h3><small class="scope-teaser">한 건 다음까지 이어 둡니다</small></span>
-                        <span class="scope-plus">+</span>
-                    </button>
-                    <div class="scope-body">
-                        <div>
-                            <ul><li>보완 서류</li><li>다음 제도</li><li>집행 이후 이음</li></ul>
-                        </div>
-                        <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
-                    </div>
-                </article>
-            </div>
-            <div class="scope-panel in" id="scopePanel">
-                <div>
-                    <div class="scope-badge" id="scopeBadge">구간 02</div>
-                    <h3 id="scopePanelTitle">서류 순서 안내</h3>
-                    <div id="scopePanelCopy">
-                        <ul><li>필수 서류 목록</li><li>제출 순서 가이드</li><li>나중에 맞춰도 되는 자료</li></ul>
-                    </div>
+                <div class="pain-card anim from-bottom delay-2">
+                    <div class="pain-card-icon">📄</div>
+                    <div class="pain-card-text">사업계획서·서류 준비가<br>복잡해서 혼자 하기엔<br>엄두가 나지 않아요.</div>
                 </div>
-                <div class="scope-art" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div class="pain-card anim from-right delay-3">
+                    <div class="pain-card-icon">⏰</div>
+                    <div class="pain-card-text">신청했다가 부결되면<br>시간과 비용 낭비가<br>걱정됩니다.</div>
+                </div>
             </div>
-            <div class="bridge">
-                <a class="btn btn-ghost" href="#cases">상담 예시 보기 →</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="block cases" id="cases">
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">SCENARIOS</div>
-                <h2>이런 대화로 시작합니다</h2>
-                <p class="lead">상담에서 자주 나오는 상황입니다. 실제 후기가 아닙니다.</p>
-            </div>
-            <div class="case-grid">
-                <article class="case anim">
-                    <div class="case-media">
-                        <img class="case-img" src="images/scope-bg.jpg" alt="" style="object-position: 50% 70%;">
-                    </div>
-                    <div class="case-body">
-                        <div class="tag">예시 시나리오 · 유통</div>
-                        <h3>성수기 전, 운영 자금만 남겼습니다</h3>
-                        <p>매입이 몰린 유통. 이번 분기 운영 자금 한 갈래만 진행했습니다.</p>
-                    </div>
-                </article>
-                <article class="case anim">
-                    <div class="case-media">
-                        <img class="case-img" src="images/case-consult.jpg" alt="정책자금 상담 자료">
-                    </div>
-                    <div class="case-body">
-                        <div class="tag">예시 시나리오 · 제조</div>
-                        <h3>설비와 운영을 한 번에 넣지 않았습니다</h3>
-                        <p>시설·운영을 동시에 넣다 일정이 꼬일 뻔했습니다. 설비 먼저, 운영은 다음으로.</p>
-                    </div>
-                </article>
-                <article class="case anim">
-                    <div class="case-media">
-                        <img class="case-img" src="images/scope-bg.jpg" alt="" style="object-position: 20% 40%;">
-                    </div>
-                    <div class="case-body">
-                        <div class="tag">예시 시나리오 · 서비스</div>
-                        <h3>거절 이력을 먼저 나눴습니다</h3>
-                        <p>같은 제도를 바로 재신청하지 않고, 부족한 지점과 우회 경로를 먼저 확인했습니다.</p>
-                    </div>
-                </article>
-            </div>
-            <div class="bridge">
-                <a class="btn btn-ghost" href="#reviews">후기 보기 →</a>
+            <div class="pain-answer anim from-bottom">
+                <div class="pain-dots"><div class="pain-dot"></div><div class="pain-dot"></div><div class="pain-dot"></div></div>
+                <p class="pain-answer-mid">그 고민을 해결하기 위해</p>
+                <div class="pain-answer-box">이음비즈솔루션이 함께합니다</div>
+                <p class="pain-answer-desc">
+                    이음비즈솔루션은 대표님의 기업 상황을 정밀 분석하여<br>
+                    <strong>최적의 정책자금 매칭부터 최종 승인까지</strong> 책임지고 함께합니다.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="block reviews" id="reviews">
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">SUCCESS STORIES</div>
-                <h2>실제 대표님들의 이야기</h2>
-                <p class="lead">실제 대표님들이 남긴 이야기입니다.</p>
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item anim from-bottom delay-1">
+                <div class="stat-num"><span class="stat-count" data-to="97">0</span><span class="stat-suffix">%+</span></div>
+                <div class="stat-label">평균 승인율<br>업계 최고 수준</div>
             </div>
+            <div class="stat-item anim from-bottom delay-2">
+                <div class="stat-num"><span class="stat-count" data-to="3500" data-comma="1">0</span><span class="stat-suffix">+</span></div>
+                <div class="stat-label">누적 컨설팅 건수<br>압도적 실적</div>
+            </div>
+            <div class="stat-item anim from-bottom delay-3">
+                <div class="stat-num"><span class="stat-count" data-to="1800" data-comma="1">0</span><span class="stat-suffix">억+</span></div>
+                <div class="stat-label">누적 승인 금액<br>실제 집행된 자금</div>
+            </div>
+            <div class="stat-item anim from-bottom delay-4">
+                <div class="stat-num"><span class="stat-count" data-to="10">0</span><span class="stat-suffix">년+</span></div>
+                <div class="stat-label">업력 및 전문성<br>검증된 노하우</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section" id="why">
+        <div class="why-header anim from-bottom">
+            <div class="section-label">WHY IEUM BIZ</div>
+            <h2 class="section-title">왜 이음비즈솔루션이어야 하는가</h2>
+            <p class="section-sub">규모만 큰 것이 아닙니다. 대표님 기업의 현실에 맞는 전략을 설계합니다.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card anim from-left delay-1">
+                <div class="why-num">01</div>
+                <div>
+                    <div class="why-text-title">전담 전문가가 처음부터 끝까지</div>
+                    <div class="why-text-desc">담당자가 중간에 바뀌거나 정보가 왜곡되지 않습니다. 배정된 전문 컨설턴트가 진단부터 승인까지 직접 책임지고 완주합니다.</div>
+                </div>
+            </div>
+            <div class="why-card anim from-right delay-1">
+                <div class="why-num">02</div>
+                <div>
+                    <div class="why-text-title">당일 분석·즉시 방향 제시</div>
+                    <div class="why-text-desc">현황을 보내주시면 당일 내로 분석 후 접근 가능한 자금과 우선순위를 정리해드립니다. 기다림이 없습니다.</div>
+                </div>
+            </div>
+            <div class="why-card anim from-left delay-2">
+                <div class="why-num">03</div>
+                <div>
+                    <div class="why-text-title">소기업·중소기업 현실에 특화</div>
+                    <div class="why-text-desc">대기업 중심 컨설팅과 다릅니다. 서류도 시간도 부족한 소상공인·중소기업 대표님의 현실에 딱 맞는 전략을 제안합니다.</div>
+                </div>
+            </div>
+            <div class="why-card anim from-right delay-2">
+                <div class="why-num">04</div>
+                <div>
+                    <div class="why-text-title">자금 이후 성장 전략까지 연계</div>
+                    <div class="why-text-desc">한 번의 자금 승인으로 끝나지 않습니다. 인증 확장, 추가 지원사업 연계, 보증 전략까지 지속 성장을 함께 설계합니다.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ceo-section">
+        <div class="ceo-inner">
+            <div class="ceo-img-wrap anim from-left">
+                <img class="ceo-img" src="images/ceo.jpg" alt="이음비즈솔루션 대표" width="682" height="1024">
+                <div class="ceo-gold-bar">
+                    <div class="ceo-gold-bar-title">CONSULTING EXPERIENCE</div>
+                    <div class="ceo-gold-bar-val">현장 밀착 컨설팅</div>
+                </div>
+            </div>
+            <div class="anim from-right">
+                <div class="ceo-badge">CEO MESSAGE</div>
+                <h2 class="ceo-title">대표님의 성장이<br>저희의 성공입니다.</h2>
+                <div class="ceo-divider"></div>
+                <p class="ceo-desc">
+                    안녕하세요. 이음비즈솔루션 대표입니다.<br><br>
+                    정책자금은 제대로 활용하면 기업의 도약을 가속화하는 강력한 도구가 됩니다.
+                    하지만 복잡한 조건과 방대한 서류 앞에서 많은 대표님들이 포기하거나, 잘못된 방향으로 시간을 낭비하고 계십니다.<br><br>
+                    저희 이음비즈솔루션은 단순한 서류 대행이 아닙니다.
+                    기업의 현재 상태를 정밀하게 진단하고, 가장 유리한 자금을 선별하여, 승인 가능성을 극대화하는 전략을 설계합니다.<br><br>
+                    대표님은 사업에만 집중하십시오. 자금은 저희에게 맡겨주세요.
+                </p>
+                <div class="ceo-signature">
+                    <div class="ceo-sig-name">이음비즈솔루션 대표</div>
+                    <div class="ceo-sig-title">정책자금 전문 컨설턴트 · IEUM BIZ SOLUTION</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="services-inner">
+            <div class="services-header anim from-bottom">
+                <div class="section-label">OUR SERVICES</div>
+                <h2 class="section-title white">필요한 서비스만 선택하세요</h2>
+                <p class="section-sub white">전 과정도, 일부 단계도 — 대표님 상황에 맞게 진행합니다.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card anim from-bottom delay-1">
+                    <span class="service-title">🔎 정책자금 진단</span>
+                    <div class="service-desc">업종·현황에 맞는 운영자금·시설자금·창업자금 방향을 빠르게 정리하고 접근 가능한 우선순위를 선별합니다.</div>
+                </div>
+                <div class="service-card anim from-bottom delay-2">
+                    <span class="service-title">📋 서류 준비 지원</span>
+                    <div class="service-desc">필수 서류 목록과 준비 순서, 놓치기 쉬운 보완 포인트까지 체계적으로 안내해 시행착오를 최소화합니다.</div>
+                </div>
+                <div class="service-card anim from-bottom delay-3">
+                    <span class="service-title">📊 사업계획서 전략</span>
+                    <div class="service-desc">심사위원이 주목하는 포인트를 중심으로 기업의 강점을 극대화한 사업계획서를 함께 구성합니다.</div>
+                </div>
+                <div class="service-card anim from-bottom delay-1">
+                    <span class="service-title">🏅 기업 인증 컨설팅</span>
+                    <div class="service-desc">이노비즈·메인비즈·벤처인증 등 성장 단계에 맞는 인증 방향을 검토하고, 세제 혜택과 금융 우대 기반을 마련합니다.</div>
+                </div>
+                <div class="service-card anim from-bottom delay-2">
+                    <span class="service-title">🛡️ 보증·신용 자금</span>
+                    <div class="service-desc">신용보증기금·기술보증기금 연계 보증 자금과 신용 대출 가능성을 함께 진단하고 최적 경로를 제안합니다.</div>
+                </div>
+                <div class="service-card anim from-bottom delay-3">
+                    <span class="service-title">🔄 사후관리 &amp; 추가 전략</span>
+                    <div class="service-desc">자금 승인 이후 보완 방향과 다음 지원사업·인증 연계 가능성까지 지속적으로 함께 설계합니다.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section" id="process">
+        <div class="process-header anim from-bottom">
+            <div class="section-label">HOW IT WORKS</div>
+            <h2 class="section-title">4단계, 복잡하지 않습니다</h2>
+            <p class="section-sub">준비된 서류가 없어도 괜찮습니다. 현황만 알려주시면 시작할 수 있습니다.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step anim from-bottom delay-1">
+                <div class="process-circle">01</div>
+                <div class="process-title">무료 상담 신청</div>
+                <div class="process-desc">업종·현황을 간단히 남겨주세요. 아는 범위만으로 충분합니다.</div>
+            </div>
+            <div class="process-step anim from-bottom delay-2">
+                <div class="process-circle">02</div>
+                <div class="process-title">맞춤 자금 진단</div>
+                <div class="process-desc">기업 분석 후 접근 가능한 자금과 우선순위를 당일 정리합니다.</div>
+            </div>
+            <div class="process-step anim from-bottom delay-3">
+                <div class="process-circle">03</div>
+                <div class="process-title">서류 준비 &amp; 신청</div>
+                <div class="process-desc">전담 컨설턴트와 함께 빈틈 없이 서류를 준비하고 신청합니다.</div>
+            </div>
+            <div class="process-step anim from-bottom delay-4">
+                <div class="process-circle">04</div>
+                <div class="process-title">승인 &amp; 사후관리</div>
+                <div class="process-desc">자금 집행 후 추가 성장 전략까지 지속 지원합니다.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+        <div class="reviews-header anim from-bottom">
+            <div class="section-label">SUCCESS STORIES</div>
+            <h2 class="section-title">실제 대표님들의 이야기</h2>
+            <p class="section-sub">수치보다 더 중요한 건, 실제 경험입니다.</p>
         </div>
         <div class="slider-wrap">
-            <button class="slider-arrow left" id="sliderPrev" type="button" aria-label="이전">←</button>
+            <button class="slider-arrow left" id="sliderPrev" aria-label="이전">←</button>
             <div class="slider-viewport" id="sliderViewport">
                 <div class="slider-track" id="sliderTrack">
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">막막했던 정책자금, 방향이 보였습니다.</div>
-                        <div class="review-text">현황만 말씀드렸더니 접근 가능한 자금과 우선순위를 바로 정리해 주셨습니다.</div>
+                        <div class="review-title">막막했던 정책자금, 방향이 보이기 시작했습니다.</div>
+                        <div class="review-text">혼자서는 어디서부터 손대야 할지 몰랐는데, 현황만 말씀드렸더니 접근 가능한 자금과 우선순위를 바로 정리해 주셨습니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 소매업 대표 · 서울</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">작년에 부결됐는데, 결과가 달랐습니다.</div>
-                        <div class="review-text">문제점을 짚어 주시고 서류를 다시 잡아 주신 덕분에 원하는 한도를 받았습니다.</div>
+                        <div class="review-title">작년에 부결됐는데, 이번에는 다른 결과가 났습니다.</div>
+                        <div class="review-text">혼자 진행하다 떨어져서 막막했는데, 문제점을 정확히 짚어주시고 서류부터 다시 잡아 주신 덕분에 원하는 한도로 자금을 확보했습니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 제조업 대표 · 경기도</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
                         <div class="review-title">바쁜 와중에도 진행이 수월했습니다.</div>
-                        <div class="review-text">조건에 맞는 자금을 찾아 차근차근 준비할 수 있었습니다.</div>
+                        <div class="review-text">복잡한 서류 때문에 시작부터 막혔는데, 제 조건에 맞는 자금을 찾아 차근차근 준비할 수 있었습니다. 시간도 아끼고 결과도 만족합니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 서비스업 대표 · 부산</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">시중 은행보다 부담이 덜했습니다.</div>
-                        <div class="review-text">상황을 진단해 주시고, 부담이 덜한 정책자금을 매칭해 주셨습니다.</div>
+                        <div class="review-title">시중 은행보다 유리한 조건으로 숨통이 트였습니다.</div>
+                        <div class="review-text">사업장 상황을 정확히 진단해 주시고, 부담이 덜한 정책자금을 매칭해 주셨어요. 덕분에 사업에만 집중할 수 있게 되었습니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 도소매업 대표 · 인천</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">사업계획서부터 면접까지 꼼꼼했습니다.</div>
-                        <div class="review-text">작년에 혼자 진행하다 떨어졌는데, 코칭 덕분에 이번에는 자금을 확보했습니다.</div>
+                        <div class="review-title">사업계획서부터 면접 준비까지 꼼꼼했습니다.</div>
+                        <div class="review-text">작년에 혼자 진행했다가 떨어져서 걱정이 많았는데, 디테일한 코칭 덕분에 이번에는 무사히 자금을 확보할 수 있었습니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 건설업 대표 · 대구</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">예상보다 나은 조건으로 한도를 받았습니다.</div>
-                        <div class="review-text">강점을 정리한 사업계획서 덕분에 예상보다 나은 조건으로 확보했습니다.</div>
+                        <div class="review-title">예상보다 좋은 조건으로 한도를 받았습니다.</div>
+                        <div class="review-text">기업의 강점을 잘 정리해 주신 사업계획서 덕분에 예상보다 나은 조건으로 자금을 확보했습니다. 확장의 밑거름이 될 것 같습니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 정보통신업 대표 · 서울</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">조건이 걱정됐는데 길이 열렸습니다.</div>
-                        <div class="review-text">어려울 것 같았는데, 방향이 달랐고 결과로 보여 주셨습니다.</div>
+                        <div class="review-title">조건이 걱정됐는데 빠르게 길이 열렸습니다.</div>
+                        <div class="review-text">어려울 것 같다고만 생각했는데, 전문가에게 맡기니 방향이 달랐습니다. 빠르고 정확하게 결과로 보여 주셔서 든든합니다.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 제조업 대표 · 경남</div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <div class="review-title">신용 걱정이 있었는데 다른 경로를 찾았습니다.</div>
-                        <div class="review-text">신용 때문에 어려울 줄 알았는데, 보증 연계 자금을 제안해 주셨습니다.</div>
+                        <div class="review-title">신용 걱정이 있었는데 다른 경로를 찾아주셨습니다.</div>
+                        <div class="review-text">신용점수 때문에 어려울 줄 알았는데, 제 상황에 맞는 보증 연계 자금을 제안해 주셨습니다. 이런 방법이 있는 줄 몰랐어요.</div>
                         <div class="review-author"><div class="review-author-dot"></div> 도소매업 대표 · 대전</div>
                     </div>
                 </div>
             </div>
-            <button class="slider-arrow right" id="sliderNext" type="button" aria-label="다음">→</button>
+            <button class="slider-arrow right" id="sliderNext" aria-label="다음">→</button>
         </div>
         <div class="slider-dots" id="sliderDots"></div>
-        <div class="wrap mid-cta">
-            <a class="btn btn-primary" href="#apply">현황 남기기</a>
-        </div>
     </section>
 
-    <section class="block ceo-sec" id="ceo">
-        <div class="wrap ceo">
-            <div class="anim from-left">
-                <div class="kicker">LETTER</div>
-                <blockquote>좋은 컨설팅은 많이 넣는 일이 아니라, 지금 잇지 않을 길을 고르는 일입니다.</blockquote>
-                <p>제도가 많아 전부 가능해 보이지만, 손대면 조건이 어긋납니다. 서류를 쌓기 전에, 지금 속도에 맞는 길인지부터 묻습니다.</p>
-                <div class="ceo-sign">이음비즈솔루션 대표<small>IEUM BIZ SOLUTION</small></div>
-            </div>
-            <div class="ceo-photo anim from-right">
-                <img src="images/ceo.jpg" alt="이음비즈솔루션 대표" width="682" height="1024">
-            </div>
-        </div>
-    </section>
-
-    <section class="block faq-sec" id="faq">
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">FAQ</div>
-                <h2>자주 묻는 것만 남겼습니다</h2>
-            </div>
-            <div class="faq-list" id="faqList">
-                <div class="faq-item open">
-                    <button type="button">상담 비용이 있나요? <span>−</span></button>
-                    <p>초진은 무료입니다. 범위가 정해지면 그때 안내합니다.</p>
-                </div>
-                <div class="faq-item">
-                    <button type="button">지방에서도 가능한가요? <span>+</span></button>
-                    <p>가능합니다. 화상·전화로 진행합니다.</p>
-                </div>
-                <div class="faq-item">
-                    <button type="button">예전에 거절된 적 있어도 되나요? <span>+</span></button>
-                    <p>됩니다. 같은 창구를 바로 다시 두드리지 않습니다.</p>
-                </div>
-                <div class="faq-item">
-                    <button type="button">개인정보는 어디에 쓰이나요? <span>+</span></button>
-                    <p>상담 연락과 진행 관리에만 씁니다.</p>
-                </div>
-                <div class="faq-item">
-                    <button type="button">서류가 하나도 없어도 되나요? <span>+</span></button>
-                    <p>됩니다. 업종·매출·필요 자금만 남겨 주세요.</p>
-                </div>
-            </div>
-            <div class="bridge">
-                <a class="btn btn-primary" href="#apply">상담 받기</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="block apply" id="apply">
-        <div class="wrap">
-            <div class="anim">
-                <div class="kicker">CONTACT</div>
-                <h2>현황만 남겨 주세요</h2>
-                <p class="lead">아는 칸만 채우셔도 됩니다. 평일 순차 연락드립니다.</p>
+    <section class="form-section" id="apply">
+        <div class="form-bg"></div>
+        <div class="form-overlay"></div>
+        <div class="form-inner anim from-bottom">
+            <div class="form-header">
+                <span class="section-label">FREE CONSULTING</span>
+                <h2 class="section-title white" style="margin-top:10px;">지금 바로 무료 상담을 신청하세요</h2>
+                <p class="section-sub white">전담 컨설턴트가 24시간 이내 직접 연락드립니다.</p>
             </div>
             <div class="form-card">
                 <div id="formArea">
-                    <div class="grid">
-                        <div class="field"><label for="f_company">업체명 *</label><input id="f_company" placeholder="상호"></div>
-                        <div class="field"><label for="f_name">대표자명 *</label><input id="f_name" placeholder="성함"></div>
-                        <div class="field"><label for="f_phone">연락처 *</label><input id="f_phone" placeholder="010-0000-0000"></div>
-                        <div class="field">
-                            <label for="f_industry">업종</label>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="f_company">업체명 *</label>
+                            <input type="text" id="f_company" placeholder="업체명을 입력해주세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f_name">대표자명 *</label>
+                            <input type="text" id="f_name" placeholder="대표자명" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f_phone">연락처 *</label>
+                            <input type="tel" id="f_phone" placeholder="010-0000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f_industry">업종</label>
                             <select id="f_industry">
-                                <option value="">선택</option>
-                                <option>제조업</option><option>도소매업</option><option>서비스업</option>
-                                <option>정보통신업</option><option>건설업</option><option>기타</option>
+                                <option value="">업종 선택</option>
+                                <option>제조업</option>
+                                <option>도소매업</option>
+                                <option>서비스업</option>
+                                <option>정보통신업</option>
+                                <option>건설업</option>
+                                <option>기타</option>
                             </select>
                         </div>
-                        <div class="field">
-                            <label for="f_region">지역</label>
+                        <div class="form-group">
+                            <label class="form-label" for="f_region">지역</label>
                             <select id="f_region">
-                                <option value="">선택</option>
+                                <option value="">지역 선택</option>
                                 <option>서울</option><option>경기</option><option>인천</option>
                                 <option>대전</option><option>세종</option><option>대구</option>
                                 <option>광주</option><option>울산</option><option>부산</option>
@@ -1351,171 +892,228 @@
                                 <option>경상도</option><option>제주도</option>
                             </select>
                         </div>
-                        <div class="field">
-                            <label for="f_revenue">연매출</label>
+                        <div class="form-group">
+                            <label class="form-label" for="f_revenue">연매출</label>
                             <select id="f_revenue">
-                                <option value="">선택</option>
-                                <option>1억 미만</option><option>1~3억</option><option>3~5억</option>
-                                <option>5~10억</option><option>10억 이상</option>
+                                <option value="">연매출 선택</option>
+                                <option>1억 미만</option>
+                                <option>1~3억</option>
+                                <option>3~5억</option>
+                                <option>5~10억</option>
+                                <option>10억 이상</option>
                             </select>
                         </div>
-                        <div class="field"><label for="f_year">설립 연도</label><input id="f_year" placeholder="예) 2019"></div>
-                        <div class="field">
-                            <label for="f_biztype">사업자 형태</label>
+                        <div class="form-group">
+                            <label class="form-label" for="f_year">설립 연도</label>
+                            <input type="text" id="f_year" placeholder="예) 2018">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f_biztype">사업자 형태</label>
                             <select id="f_biztype">
                                 <option value="">선택</option>
-                                <option>개인사업자</option><option>법인사업자</option><option>예비창업자</option>
+                                <option>개인사업자</option>
+                                <option>법인사업자</option>
+                                <option>예비창업자</option>
                             </select>
                         </div>
                     </div>
-                    <div class="agree">
+                    <div class="form-agree">
                         <input type="checkbox" id="f_agree">
-                        <label for="f_agree">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+                        <label class="form-agree-label" for="f_agree">개인정보 수집 및 이용에 동의합니다. (필수)</label>
                     </div>
-                    <div class="privacy">
-                        <strong>개인정보 안내</strong><br>
-                        상담 접수·연락·진행 관리를 위해 업체명·성함·연락처와 선택 항목을 수집합니다. 목적 달성 후 파기하며, 동의 없이 제3자에게 제공하지 않습니다.
+                    <div class="privacy-box">
+                        <strong>개인정보처리방침</strong><br>
+                        이음비즈솔루션(이하 ‘회사’)는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 관련 고충을 신속하고 원활하게 처리하기 위하여 다음과 같이 개인정보처리방침을 수립·공개합니다.<br><br>
+                        <strong>제1조 (개인정보의 처리목적)</strong><br>
+                        1. 상담 신청 접수 및 문의 응대<br>
+                        2. 서비스 제공 및 계약 관련 업무 처리<br>
+                        3. 고객 관리 및 민원 처리<br>
+                        4. 법령 및 규정 준수를 위한 기록 보관<br><br>
+                        <strong>제2조 (수집하는 개인정보 항목)</strong><br>
+                        필수항목 : 업체명, 대표자명, 연락처, 업종, 지역<br>
+                        선택항목 : 연매출, 설립연도, 사업자 형태<br>
+                        서비스 이용 과정에서 IP주소, 쿠키, 접속기록 등이 자동 수집될 수 있습니다.<br><br>
+                        <strong>제3조 (개인정보의 보유 및 이용기간)</strong><br>
+                        수집 및 이용 목적이 달성된 후 지체 없이 파기합니다. 관계 법령에 따라 보관이 필요한 경우 해당 기간 동안 보관합니다.<br><br>
+                        <strong>제4조 (개인정보의 제3자 제공)</strong><br>
+                        이용자의 동의가 있거나 법령에 특별한 규정이 있는 경우를 제외하고 개인정보를 외부에 제공하지 않습니다.<br><br>
+                        <strong>제5조 (정보주체의 권리)</strong><br>
+                        이용자는 언제든지 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다.
                     </div>
-                    <button class="btn btn-primary" id="submitBtn" type="button">상담 신청하기</button>
+                    <button class="form-submit" id="submitBtn" type="button">무료 상담 신청하기</button>
                 </div>
-                <div class="success" id="successArea">
-                    <div style="font-size:36px;">✓</div>
-                    <h3>접수되었습니다</h3>
-                    <p>평일 09:00–18:00 순차 연락드립니다.</p>
+                <div class="form-success" id="successArea">
+                    <div class="form-success-icon">✅</div>
+                    <div class="form-success-title">신청이 완료되었습니다!</div>
+                    <div class="form-success-desc">전담 컨설턴트가 24시간 이내 직접 연락드립니다.<br>평일 09:00 ~ 18:00 운영 기준으로 순차 처리됩니다.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="wrap">
-            <div class="foot">
-                <div>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
                     <img src="images/logo-white.png" alt="이음비즈솔루션">
-                    <p>기업 현황과 정책자금을 잇는 컨설팅</p>
                 </div>
-                <div>
-                    <a href="#diagnose">현황 진단</a>
-                    <a href="#path">진행 방식</a>
-                    <a href="#services">업무 범위</a>
-                    <a href="#reviews">후기</a>
-                    <a href="#apply">상담</a>
-                </div>
-                <div>
-                    <a href="https://blog.naver.com/" target="_blank" rel="noopener">네이버</a>
-                    <a href="https://pf.kakao.com/" target="_blank" rel="noopener">카카오</a>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener">인스타그램</a>
-                    <a href="https://www.youtube.com/" target="_blank" rel="noopener">채널</a>
+                <div class="footer-brand-desc">
+                    소상공인·중소기업 전문 정책자금 컨설팅<br>
+                    복잡한 자금, 전문가와 함께라면 길이 보입니다.
                 </div>
             </div>
-            <div class="copy">상호 : 이음비즈솔루션 | IEUM BIZ SOLUTION · 평일 09:00–18:00<br>© 2026 IEUM BIZ SOLUTION</div>
+            <div class="footer-links-group">
+                <div>
+                    <div class="footer-links-title">MENU</div>
+                    <div class="footer-links">
+                        <a href="#about">기업소개</a>
+                        <a href="#services">서비스</a>
+                        <a href="#process">진행절차</a>
+                        <a href="#reviews">성공사례</a>
+                        <a href="#apply">무료상담</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-links-title">CHANNEL</div>
+                    <div class="footer-links">
+                        <a href="https://blog.naver.com/" target="_blank" rel="noopener noreferrer">네이버 블로그</a>
+                        <a href="https://pf.kakao.com/" target="_blank" rel="noopener noreferrer">카카오톡</a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">인스타그램</a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">유튜브 채널</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                상호 : 이음비즈솔루션 | IEUM BIZ SOLUTION<br>
+                상담시간 : 평일 09:00 ~ 18:00 (주말·공휴일 휴무)
+            </div>
+            <div class="footer-copy">© 2026 IEUM BIZ SOLUTION. All Rights Reserved.</div>
         </div>
     </footer>
 
+    <!--
+      구글 시트 연동 방법
+      1) 시트 헤더: 신청시각 / 업체명 / 대표자명 / 연락처 / 업종 / 지역 / 연매출 / 설립연도 / 사업자형태
+      2) 확장 프로그램 > Apps Script 에 아래 코드를 붙여 웹 앱으로 배포(액세스: 모든 사용자)
+      3) 배포 URL을 GOOGLE_SCRIPT_URL 에 넣기
+
+      function doPost(e) {
+        const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+        const d = JSON.parse(e.postData.contents);
+        sheet.appendRow([d.timestamp, d.company, d.name, d.phone, d.industry, d.region, d.revenue, d.year, d.biztype]);
+        return ContentService.createTextOutput('ok');
+      }
+    -->
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6nJFu7f2wW1VPWkWH8O0-JChty_2QWLb_q9CrpNt0OXFAbRY5w0EvOobEmVCxQROk/exec';
 
-        const answers = {
-            many: { t: '먼저 볼 것: 제도 지도', d: '손댈 제도와 지금은 건너뛸 제도를 한 장으로 나눕니다.' },
-            docs: { t: '먼저 볼 것: 서류 순서', d: '지금 필요한 파일과 나중에 맞춰도 되는 파일을 나눕니다.' },
-            reject: { t: '먼저 볼 것: 이전 신청의 빈칸', d: '거절 사유를 나눈 뒤, 우회할 경로가 있는지 봅니다.' },
-            urgent: { t: '먼저 볼 것: 일정과 자금 성격', d: '운영인지 시설인지 가른 뒤, 이번 라운드 한 갈래만 고릅니다.' }
-        };
-        const renderDiag = (key) => {
-            const a = answers[key];
-            const box = document.getElementById('diagResult');
-            box.innerHTML = '<div class="diag-swap"><h3>' + a.t + '</h3><p>' + a.d + '</p></div><a class="btn btn-primary" href="#apply">이 내용으로 남기기</a>';
-        };
-        document.querySelectorAll('.chip').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.chip').forEach((b) => b.classList.remove('active'));
-                btn.classList.add('active');
-                renderDiag(btn.dataset.key);
-                const diag = document.getElementById('diagnose');
-                if (diag) diag.dataset.pick = btn.dataset.key;
-            });
-        });
-
         (function () {
-            const items = Array.from(document.querySelectorAll('#pathSteps .path-item'));
-            const dots = Array.from(document.querySelectorAll('#pathTrack .path-dot'));
-            const fill = document.getElementById('pathFill');
-            if (!items.length || !fill) return;
-            let current = 0;
-            let timer = null;
-            const setStep = (idx) => {
-                current = idx;
-                items.forEach((el, i) => el.classList.toggle('on', i === idx));
-                dots.forEach((el, i) => el.classList.toggle('on', i === idx));
-                fill.style.width = 'calc((100% - 16px) * ' + idx + ' / 2)';
+            const video = document.getElementById('heroVideo');
+            if (!video) return;
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const sync = () => {
+                if (reduce.matches) { video.pause(); return; }
+                video.play().catch(() => {});
             };
-            const next = () => setStep(current === 2 ? 0 : current + 1);
-            const start = () => {
-                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-                clearInterval(timer);
-                timer = setInterval(next, 3800);
-            };
-            items.forEach((item, i) => item.addEventListener('click', () => { setStep(i); start(); }));
-            dots.forEach((dot, i) => dot.addEventListener('click', () => { setStep(i); start(); }));
-            document.getElementById('path').addEventListener('mouseenter', () => clearInterval(timer));
-            document.getElementById('path').addEventListener('mouseleave', start);
-            setStep(0);
-            start();
+            sync();
+            reduce.addEventListener('change', sync);
         })();
 
-        const scopePanelTitle = document.getElementById('scopePanelTitle');
-        const scopePanelCopy = document.getElementById('scopePanelCopy');
-        const scopePanel = document.getElementById('scopePanel');
-        const scopeFill = document.getElementById('scopeFill');
-        const scopeBadge = document.getElementById('scopeBadge');
-        const scopeCards = Array.from(document.querySelectorAll('.scope-card'));
-        const setScopeChain = (idx) => {
-            document.querySelectorAll('.scope-st').forEach((el, i) => el.classList.toggle('on', i <= idx));
-            if (scopeFill) scopeFill.style.width = 'calc((100% - 28px) * ' + idx + ' / 5)';
-            if (scopeBadge) scopeBadge.textContent = '구간 0' + (idx + 1);
-        };
-        const showScope = (card) => {
-            const idx = scopeCards.indexOf(card);
-            document.querySelectorAll('.scope-card').forEach((el) => {
-                el.classList.remove('open');
-                const plus = el.querySelector('.scope-plus');
-                if (plus) plus.textContent = '+';
+        (function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.anim').forEach((el) => observer.observe(el));
+        })();
+
+        (function () {
+            const counters = document.querySelectorAll('.stat-count');
+            if (!counters.length) return;
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const format = (n, comma) => comma ? Math.round(n).toLocaleString('en-US') : String(Math.round(n));
+            const run = (el) => {
+                const to = Number(el.dataset.to || 0);
+                const comma = el.dataset.comma === '1';
+                if (reduce) { el.textContent = format(to, comma); return; }
+                const duration = 1400;
+                const start = performance.now();
+                const tick = (now) => {
+                    const t = Math.min(1, (now - start) / duration);
+                    const eased = 1 - Math.pow(1 - t, 3);
+                    el.textContent = format(to * eased, comma);
+                    if (t < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+            };
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    run(entry.target);
+                    io.unobserve(entry.target);
+                });
+            }, { threshold: 0.4 });
+            counters.forEach((el) => io.observe(el));
+        })();
+
+        const nav = document.getElementById('nav');
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 80 ? '#081226' : '#0A1834';
+            let current = '';
+            sections.forEach((section) => {
+                if (window.scrollY >= section.offsetTop - 120) current = section.id;
             });
-            card.classList.add('open');
-            card.querySelector('.scope-plus').textContent = '−';
-            if (scopePanelTitle) scopePanelTitle.textContent = card.querySelector('h3').textContent;
-            const copy = card.querySelector('.scope-body > div');
-            if (scopePanelCopy && copy) scopePanelCopy.innerHTML = copy.innerHTML;
-            setScopeChain(idx);
-            if (scopePanel) {
-                scopePanel.classList.remove('in');
-                void scopePanel.offsetWidth;
-                scopePanel.classList.add('in');
-            }
-        };
-        scopeCards.forEach((card) => {
-            card.addEventListener('click', () => showScope(card));
-        });
-        document.querySelectorAll('.scope-st').forEach((st) => {
-            st.addEventListener('click', () => {
-                const card = scopeCards[Number(st.dataset.idx)];
-                if (card) showScope(card);
+            if (current === 'why' || current === 'ceo') current = 'about';
+            navLinks.forEach((link) => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        }, { passive: true });
+
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+            a.addEventListener('click', (e) => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-        setScopeChain(1);
+
+        const hamburger = document.getElementById('hamburger');
+        const navDrawer = document.getElementById('navDrawer');
+        hamburger.addEventListener('click', () => {
+            const isOpen = hamburger.classList.toggle('open');
+            navDrawer.classList.toggle('open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        document.querySelectorAll('.drawer-link').forEach((link) => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navDrawer.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
 
         (function () {
             const track = document.getElementById('sliderTrack');
             const viewport = document.getElementById('sliderViewport');
             const dotsWrap = document.getElementById('sliderDots');
-            if (!track || !viewport || !dotsWrap) return;
             const cards = track.querySelectorAll('.review-card');
             const total = cards.length;
             let current = 0;
             let autoTimer = null;
+
             const getPerPage = () => window.innerWidth <= 900 ? 1 : 3;
-            const getCardWidth = () => cards[0].offsetWidth + 18;
+            const getCardWidth = () => cards[0].offsetWidth + 24;
             const maxIndex = () => Math.max(0, total - getPerPage());
+
             function buildDots() {
                 dotsWrap.innerHTML = '';
                 for (let i = 0; i <= maxIndex(); i++) {
@@ -1537,8 +1135,10 @@
             const prev = () => goTo(current > 0 ? current - 1 : maxIndex());
             const stopAuto = () => { if (autoTimer) clearInterval(autoTimer); };
             const startAuto = () => { stopAuto(); autoTimer = setInterval(next, 4000); };
+
             document.getElementById('sliderNext').addEventListener('click', () => { next(); startAuto(); });
             document.getElementById('sliderPrev').addEventListener('click', () => { prev(); startAuto(); });
+
             let touchStartX = 0;
             viewport.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; stopAuto(); }, { passive: true });
             viewport.addEventListener('touchend', (e) => {
@@ -1551,97 +1151,28 @@
             startAuto();
         })();
 
-        document.querySelectorAll('.faq-item button').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const open = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach((el) => {
-                    el.classList.remove('open');
-                    el.querySelector('span').textContent = '+';
-                });
-                if (!open) {
-                    item.classList.add('open');
-                    btn.querySelector('span').textContent = '−';
-                }
-            });
-        });
+        const tickerItems = [
+            '정책자금 무료 진단', '당일 응답 원칙', '전국 비대면 가능',
+            '1:1 전담 컨설팅', '이노비즈·벤처인증 연계', '소상공인 특화 전문',
+            '맞춤 자금 매칭', '자금 이후 성장 전략'
+        ];
+        const tickerEl = document.getElementById('tickerInner');
+        const tickerHTML = tickerItems.map((t) => '<span class="ticker-item"><span class="ticker-dot"></span>' + t + '</span>').join('');
+        tickerEl.innerHTML = tickerHTML + tickerHTML;
 
-        const hamburger = document.getElementById('hamburger');
-        const drawer = document.getElementById('drawer');
-        hamburger.addEventListener('click', () => {
-            const on = hamburger.classList.toggle('open');
-            drawer.classList.toggle('open', on);
-            document.body.style.overflow = on ? 'hidden' : '';
-        });
-        drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
-            hamburger.classList.remove('open');
-            drawer.classList.remove('open');
-            document.body.style.overflow = '';
-        }));
-
-        document.querySelectorAll('a[href^="#"]').forEach((a) => {
-            a.addEventListener('click', (e) => {
-                const t = document.querySelector(a.getAttribute('href'));
-                if (!t) return;
-                e.preventDefault();
-                t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        const progress = document.getElementById('progress');
-        const spyIds = ['diagnose', 'path', 'services', 'reviews', 'faq', 'apply'];
-        const spyLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-        const navEl = document.querySelector('.nav');
-        const onScroll = () => {
-            if (navEl) navEl.style.background = window.scrollY > 80 ? '#081226' : '#0A1834';
-            const max = document.documentElement.scrollHeight - window.innerHeight;
-            if (progress) progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-            let current = '';
-            spyIds.forEach((id) => {
-                const el = document.getElementById(id);
-                if (el && el.getBoundingClientRect().top <= 140) current = id;
-            });
-            spyLinks.forEach((a) => {
-                const href = a.getAttribute('href').slice(1);
-                a.classList.toggle('active', href === current && !a.classList.contains('nav-cta'));
-            });
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-
-        const hero = document.querySelector('.hero');
-        const glow = document.getElementById('heroGlow');
-        if (hero && glow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            hero.addEventListener('pointermove', (e) => {
-                const r = hero.getBoundingClientRect();
-                glow.style.left = (e.clientX - r.left) + 'px';
-                glow.style.top = (e.clientY - r.top) + 'px';
-            });
-        }
-
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach((en) => {
-                if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
-            });
-        }, { threshold: 0.12 });
-        document.querySelectorAll('.chips .chip, #pathSteps .path-item, .scope-grid .scope-card, .case-grid .case').forEach((el, i) => {
-            el.style.transitionDelay = ((i % 6) * 0.08) + 's';
-        });
-        document.querySelectorAll('.anim').forEach((el) => io.observe(el));
-
-        const video = document.getElementById('heroVideo');
-        if (video && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            video.play().catch(() => {});
-        }
-
-        document.getElementById('submitBtn').addEventListener('click', () => {
-            if (!document.getElementById('f_agree').checked) { alert('개인정보 수집 및 이용에 동의해주세요.'); return; }
+        document.getElementById('submitBtn').addEventListener('click', submitForm);
+        function submitForm() {
+            const agree = document.getElementById('f_agree');
+            if (!agree.checked) { alert('개인정보 수집 및 이용에 동의해주세요.'); return; }
             const company = document.getElementById('f_company').value.trim();
             const name = document.getElementById('f_name').value.trim();
             const phone = document.getElementById('f_phone').value.trim();
-            if (!company || !name || !phone) { alert('업체명, 대표자명, 연락처는 필수입니다.'); return; }
+            if (!company || !name || !phone) { alert('업체명, 대표자명, 연락처는 필수 입력 항목입니다.'); return; }
+
             const btn = document.getElementById('submitBtn');
-            btn.disabled = true; btn.textContent = '전송 중...';
+            btn.disabled = true;
+            btn.textContent = '전송 중...';
+
             const data = {
                 timestamp: new Date().toLocaleString('ko-KR'),
                 company, name, phone,
@@ -1651,16 +1182,25 @@
                 year: document.getElementById('f_year').value,
                 biztype: document.getElementById('f_biztype').value
             };
+
             const done = () => {
                 document.getElementById('formArea').style.display = 'none';
                 document.getElementById('successArea').style.display = 'block';
             };
+
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('http') !== 0) {
+                console.warn('GOOGLE_SCRIPT_URL을 Apps Script 배포 주소로 교체하면 시트에 저장됩니다.', data);
+                done();
+                return;
+            }
+
             fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST', mode: 'no-cors',
+                method: 'POST',
+                mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             }).then(done).catch(done);
-        });
+        }
     </script>
 </body>
 </html>
