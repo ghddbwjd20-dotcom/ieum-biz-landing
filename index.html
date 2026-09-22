@@ -135,10 +135,14 @@
         }
         .hero-title em { font-style: normal; color: var(--mint-light); display: block; }
         .hero-desc { font-size: 22px; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 40px; font-weight: 300; }
-        .hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+        .hero-badges { display: flex; gap: 0; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
         .hero-badge {
-            background: rgba(255,255,255,0.08); border: 1px solid rgba(196,160,74,0.35);
-            color: rgba(255,255,255,0.9); padding: 8px 18px; border-radius: 40px; font-size: 13px;
+            background: none; border: 0; color: rgba(255,255,255,0.78);
+            padding: 0 16px; font-size: 13px; position: relative;
+        }
+        .hero-badge + .hero-badge::before {
+            content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            width: 1px; height: 11px; background: rgba(255,255,255,0.28);
         }
         .hero-btn {
             display: inline-block; background: var(--cta); color: var(--navy);
@@ -257,13 +261,10 @@
             width: 100%; height: auto; object-fit: contain; object-position: center top;
             border-radius: 16px; border: 2px solid var(--gray-100); display: block; background: #c8cbd4;
         }
-        .ceo-gold-bar {
-            position: absolute; bottom: 28px; right: -20px;
-            background: var(--navy); border: 1.5px solid var(--mint);
-            border-radius: 10px; padding: 16px 22px; color: var(--white);
+        .ceo-caption {
+            margin-top: 14px; font-size: 12px; letter-spacing: 1.4px;
+            color: var(--mint); font-weight: 600;
         }
-        .ceo-gold-bar-title { font-size: 11px; color: var(--mint-light); letter-spacing: 2px; margin-bottom: 4px; }
-        .ceo-gold-bar-val { font-size: 22px; font-weight: 700; }
         .ceo-badge { font-size: 11px; letter-spacing: 4px; color: var(--mint); font-weight: 600; margin-bottom: 16px; }
         .ceo-title { font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
         .ceo-divider { width: 48px; height: 2px; background: var(--mint); margin-bottom: 28px; }
@@ -392,34 +393,35 @@
         .form-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
         .form-header { text-align: center; margin-bottom: 48px; }
         .form-card {
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(78,138,212,0.28);
-            border-radius: 20px; padding: 48px 40px;
+            background: #fff; border: 1px solid #E8E4DC;
+            border-radius: 16px; padding: 40px 36px;
+            box-shadow: 0 16px 40px rgba(6,14,36,0.18);
         }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
         .form-group { display: flex; flex-direction: column; gap: 8px; }
         .form-group.full { grid-column: 1/-1; }
-        .form-label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); letter-spacing: .5px; }
+        .form-label { font-size: 12px; font-weight: 500; color: var(--text-muted); letter-spacing: .5px; }
         .form-group input, .form-group select {
-            background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
-            color: var(--white); border-radius: 8px; padding: 12px 16px; font-size: 14px;
-            font-family: inherit; transition: border-color .2s, background .2s; outline: none;
+            background: #fff; border: 1px solid #E4E0D6;
+            color: var(--text-dark); border-radius: 8px; padding: 12px 16px; font-size: 14px;
+            font-family: inherit; transition: border-color .2s, box-shadow .2s; outline: none;
             appearance: none;
         }
-        .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+        .form-group input::placeholder { color: #A8Aeb8; }
         .form-group input:focus, .form-group select:focus {
-            border-color: rgba(78,138,212,0.7); background: rgba(255,255,255,0.1);
+            border-color: var(--mint); box-shadow: 0 0 0 3px rgba(196,160,74,0.16);
         }
-        .form-group select option { background: #1a2a4a; color: #fff; }
+        .form-group select option { background: #fff; color: var(--text-dark); }
         .form-agree { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0 16px; }
         .form-agree input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--mint); cursor: pointer; }
-        .form-agree-label { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.7; cursor: pointer; }
+        .form-agree-label { font-size: 12px; color: var(--text-muted); line-height: 1.7; cursor: pointer; }
         .privacy-box {
-            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+            background: #F8F6F1; border: 1px solid #E8E4DC;
             border-radius: 8px; padding: 14px 16px; margin-bottom: 20px;
             max-height: 140px; overflow-y: auto; font-size: 11px;
-            color: rgba(255,255,255,0.45); line-height: 1.8;
+            color: #7A8090; line-height: 1.8;
         }
-        .privacy-box strong { color: rgba(255,255,255,0.65); }
+        .privacy-box strong { color: var(--text-dark); }
         .form-submit {
             width: 100%; padding: 13px; background: var(--cta); border: none; color: var(--navy);
             font-size: 15px; font-weight: 700; font-family: inherit; border-radius: 8px;
@@ -430,9 +432,9 @@
         .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
         .form-success { display: none; text-align: center; padding: 40px 0; }
         .form-success-icon { margin-bottom: 16px; display: flex; justify-content: center; }
-        .form-success-icon svg { width: 40px; height: 40px; color: var(--mint-light); display: block; }
-        .form-success-title { font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-        .form-success-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+        .form-success-icon svg { width: 40px; height: 40px; color: var(--mint); display: block; }
+        .form-success-title { font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .form-success-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
 
         footer { background: #16325F; padding: 56px 60px 36px; border-top: 1px solid rgba(196,160,74,0.18); }
         .footer-top {
@@ -521,7 +523,7 @@
             .why-grid { grid-template-columns: 1fr; }
             .ceo-inner { grid-template-columns: 1fr; gap: 36px; }
             .ceo-img-wrap { order: -1; }
-            .ceo-gold-bar { right: 12px; bottom: -16px; }
+            .ceo-caption { text-align: center; }
             .services-section::before { display: none; }
             .services-grid { grid-template-columns: 1fr; }
             .process-steps { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
@@ -769,10 +771,7 @@
         <div class="ceo-inner">
             <div class="ceo-img-wrap anim from-left">
                 <img class="ceo-img" src="images/ceo.jpg" alt="이음비즈솔루션 대표" width="682" height="1024">
-                <div class="ceo-gold-bar">
-                    <div class="ceo-gold-bar-title">CONSULTING EXPERIENCE</div>
-                    <div class="ceo-gold-bar-val">현장 밀착 컨설팅</div>
-                </div>
+                <p class="ceo-caption">현장 밀착 컨설팅</p>
             </div>
             <div class="anim from-right">
                 <div class="ceo-badge">CEO MESSAGE</div>
