@@ -527,9 +527,16 @@
             .process-steps { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
             .process-steps::before, .process-steps::after { display: none; }
             .reviews-header { padding: 0 20px; }
-            .slider-viewport { padding: 12px 48px 16px; }
-            .slider-track { padding: 0; gap: 16px; }
-            .review-card { flex: 0 0 100%; transform: none; opacity: 1; }
+            .slider-viewport { padding: 12px 0 16px; perspective: none; }
+            .slider-track { padding: 0; gap: 16px; width: max-content; }
+            .review-card {
+                flex: 0 0 calc(100vw - 88px);
+                width: calc(100vw - 88px);
+                max-width: calc(100vw - 88px);
+                transform: none; opacity: 1;
+                margin-left: 44px;
+            }
+            .review-card + .review-card { margin-left: 0; }
             .review-card.is-left { transform: none; }
             .slider-arrow { width: 36px; height: 36px; font-size: 14px; }
             .slider-arrow.left { left: 8px; }
@@ -563,7 +570,12 @@
             .hero-btn { width: 100%; padding: 11px 20px; font-size: 14px; }
             .form-submit { padding: 12px; font-size: 14px; }
             .process-steps { grid-template-columns: 1fr; }
-            .review-card { flex: 0 0 100%; }
+            .review-card {
+                flex: 0 0 calc(100vw - 72px);
+                width: calc(100vw - 72px);
+                max-width: calc(100vw - 72px);
+                margin-left: 36px;
+            }
             .section-title { font-size: 24px; }
         }
     </style>
@@ -1203,8 +1215,9 @@
             let current = 0;
             let autoTimer = null;
 
-            const getPerPage = () => window.innerWidth <= 900 ? 1 : 3;
-            const getGap = () => window.innerWidth <= 900 ? 16 : 24;
+            const isMobile = () => window.innerWidth <= 900;
+            const getPerPage = () => isMobile() ? 1 : 3;
+            const getGap = () => isMobile() ? 16 : 24;
             const getCardWidth = () => cards[0].offsetWidth + getGap();
             const maxIndex = () => Math.max(0, total - getPerPage());
 
@@ -1234,7 +1247,13 @@
             }
             function goTo(idx) {
                 current = Math.max(0, Math.min(idx, maxIndex()));
-                track.style.transform = 'translateX(-' + (getCardWidth() * current) + 'px)';
+                if (isMobile()) {
+                    const card = cards[current];
+                    const shift = viewport.clientWidth / 2 - (card.offsetLeft + card.offsetWidth / 2);
+                    track.style.transform = 'translateX(' + Math.round(shift) + 'px)';
+                } else {
+                    track.style.transform = 'translateX(-' + (getCardWidth() * current) + 'px)';
+                }
                 updateDots();
                 markCards();
             }
@@ -1253,8 +1272,15 @@
                 if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
                 startAuto();
             });
-            window.addEventListener('resize', () => { buildDots(); goTo(current); });
+            let lastW = window.innerWidth;
+            window.addEventListener('resize', () => {
+                if (window.innerWidth === lastW) return;
+                lastW = window.innerWidth;
+                buildDots();
+                goTo(current);
+            });
             buildDots();
+            goTo(0);
             startAuto();
         })();
 
