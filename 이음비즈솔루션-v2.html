@@ -291,18 +291,24 @@
         .process-steps {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
             max-width: 1100px; margin: 0 auto; position: relative;
+            isolation: isolate;
+        }
+        .process-steps::before,
+        .process-steps::after {
+            content: ''; position: absolute; top: 31px; left: 12.5%; height: 2px;
+            z-index: 0; pointer-events: none;
         }
         .process-steps::before {
-            content: ''; position: absolute; top: 32px; left: 12.5%; right: 12.5%; height: 2px;
+            right: 12.5%; width: auto;
             background: rgba(196,160,74,0.22);
         }
         .process-steps::after {
-            content: ''; position: absolute; top: 32px; left: 12.5%; height: 2px; width: 0;
+            width: 0;
             background: linear-gradient(90deg, var(--mint-light), var(--mint));
             transition: width 1.5s cubic-bezier(.4,0,.2,1);
         }
         .process-steps.is-on::after { width: 75%; }
-        .process-step { text-align: center; padding: 0 16px; position: relative; }
+        .process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
         .process-circle {
             width: 64px; height: 64px; border-radius: 50%;
             background: var(--navy); border: 2px solid var(--mint);
