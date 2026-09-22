@@ -262,10 +262,13 @@
             width: 100%; height: auto; object-fit: contain; object-position: center top;
             border-radius: 16px; border: 2px solid var(--gray-100); display: block; background: #c8cbd4;
         }
-        .ceo-caption {
-            margin-top: 14px; font-size: 12px; letter-spacing: 1.4px;
-            color: var(--mint); font-weight: 600;
+        .ceo-gold-bar {
+            position: absolute; bottom: 28px; right: -20px;
+            background: var(--navy); border: 1.5px solid var(--mint);
+            border-radius: 10px; padding: 16px 22px; color: var(--white);
         }
+        .ceo-gold-bar-title { font-size: 11px; color: var(--mint-light); letter-spacing: 2px; margin-bottom: 4px; }
+        .ceo-gold-bar-val { font-size: 22px; font-weight: 700; }
         .ceo-badge { font-size: 11px; letter-spacing: 4px; color: var(--mint); font-weight: 600; margin-bottom: 16px; }
         .ceo-title { font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
         .ceo-divider { width: 48px; height: 2px; background: var(--mint); margin-bottom: 28px; }
@@ -524,7 +527,7 @@
             .why-grid { grid-template-columns: 1fr; }
             .ceo-inner { grid-template-columns: 1fr; gap: 36px; }
             .ceo-img-wrap { order: -1; }
-            .ceo-caption { text-align: center; }
+            .ceo-gold-bar { right: 12px; bottom: -16px; }
             .services-section::before { display: none; }
             .services-grid { grid-template-columns: 1fr; }
             .process-steps { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
@@ -772,7 +775,10 @@
         <div class="ceo-inner">
             <div class="ceo-img-wrap anim from-left">
                 <img class="ceo-img" src="images/ceo.jpg" alt="이음비즈솔루션 대표" width="682" height="1024">
-                <p class="ceo-caption">현장 밀착 컨설팅</p>
+                <div class="ceo-gold-bar">
+                    <div class="ceo-gold-bar-title">CONSULTING EXPERIENCE</div>
+                    <div class="ceo-gold-bar-val">현장 밀착 컨설팅</div>
+                </div>
             </div>
             <div class="anim from-right">
                 <div class="ceo-badge">CEO MESSAGE</div>
