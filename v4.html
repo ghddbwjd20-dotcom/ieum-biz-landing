@@ -49,16 +49,6 @@
             color: var(--text);
             overflow-x: hidden;
         }
-        .scroll-progress {
-            position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 1200;
-            background: linear-gradient(90deg, var(--navy) 0%, var(--key) 100%);
-            pointer-events: none;
-        }
-        .page-grain {
-            position: fixed; inset: 0; pointer-events: none; z-index: 80; opacity: .035;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
-
         .float-side {
             position: fixed; right: 22px; top: 50%; transform: translateY(-50%);
             display: flex; flex-direction: column; gap: 10px; z-index: 999;
@@ -78,16 +68,8 @@
             box-shadow: 0 12px 28px rgba(8,32,72,0.12);
             background: var(--key-soft);
         }
-        .float-btn.consult {
-            background: var(--navy); color: var(--white); border-color: var(--navy);
-            animation: pulseGlow 2.8s ease-out infinite;
-        }
+        .float-btn.consult { background: var(--navy); color: var(--white); border-color: var(--navy); }
         .float-btn.consult:hover { background: var(--navy-mid); color: var(--white); }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(32,72,136,.38); }
-            70% { box-shadow: 0 0 0 14px rgba(32,72,136,0); }
-            100% { box-shadow: 0 0 0 0 rgba(32,72,136,0); }
-        }
         .float-btn svg { width: 18px; height: 18px; display: block; }
 
         .nav {
@@ -143,11 +125,6 @@
             background:
                 linear-gradient(180deg, rgba(250,250,254,0.88) 0%, rgba(250,250,254,0.78) 45%, rgba(250,250,254,0.92) 100%),
                 linear-gradient(160deg, rgba(185,215,255,0.28), rgba(250,250,254,0.2));
-        }
-        .hero-spot {
-            position: absolute; inset: 0; pointer-events: none;
-            background: radial-gradient(460px 460px at var(--spot-x, 50%) var(--spot-y, 38%), rgba(185,215,255,0.32), transparent 68%);
-            transition: background .15s linear;
         }
         .hero-orbs { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
         .orb {
@@ -217,16 +194,6 @@
             transition: background .2s, transform .2s, box-shadow .2s;
             box-shadow: 0 14px 32px rgba(8,32,72,0.18);
         }
-        .hero-btn::after {
-            content: ''; position: absolute; inset: 0; pointer-events: none;
-            background: linear-gradient(105deg, transparent 36%, rgba(255,255,255,.3) 50%, transparent 64%);
-            transform: translateX(-130%);
-            animation: sheen 4.8s ease-in-out 1.6s infinite;
-        }
-        @keyframes sheen {
-            0%, 68% { transform: translateX(-130%); }
-            86%, 100% { transform: translateX(130%); }
-        }
         .hero-btn:hover { background: var(--navy-mid); transform: translateY(-2px); }
         .hero-scroll {
             position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
@@ -278,12 +245,9 @@
         .pain-photo img {
             width: 100%; height: 100%; object-fit: cover; object-position: center;
             display: block;
-            transform: scale(1.08); filter: saturate(.92) contrast(1.04);
-            clip-path: inset(0 100% 0 0);
-            transition: clip-path 1s cubic-bezier(.22,1,.36,1), transform 1.2s ease;
+            transform: scale(1.02); transition: transform .8s ease; filter: saturate(.92) contrast(1.04);
         }
-        .pain-card.visible .pain-photo img { clip-path: inset(0 0 0 0); transform: scale(1.02); }
-        .pain-card:hover .pain-photo img { transform: scale(1.1); }
+        .pain-card:hover .pain-photo img { transform: scale(1.06); }
         .pain-card-icon {
             width: 56px; height: 56px; border-radius: 50%;
             background: var(--card); border: 1px solid var(--key);
@@ -362,11 +326,8 @@
         }
         .ceo-img {
             width: 100%; height: auto; object-fit: contain; object-position: center top;
-            display: block; transform: scale(1.08);
-            transition: transform 1.4s cubic-bezier(.22,1,.36,1);
+            display: block;
         }
-        .ceo-img-wrap.visible .ceo-img { transform: scale(1); }
-        .ceo-frame:hover .ceo-img { transform: scale(1.045); }
         .ceo-gold-bar {
             position: absolute; bottom: 24px; right: -16px;
             background: var(--navy);
@@ -394,15 +355,8 @@
             background: var(--card); border: 1px solid var(--line);
             border-radius: 22px; padding: 28px 24px;
             transition: transform .25s, box-shadow .25s, border-color .25s;
-            overflow: hidden; position: relative;
         }
-        .service-card::before {
-            content: ''; position: absolute; top: 0; left: -130%; width: 55%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(185,215,255,0.35), transparent);
-            transform: skewX(-22deg); transition: left .7s ease; pointer-events: none; z-index: 1;
-        }
-        .service-card:hover { box-shadow: 0 18px 40px rgba(8,32,72,0.09); border-color: var(--key); }
-        .service-card:hover::before { left: 140%; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(8,32,72,0.09); border-color: var(--key); }
         .service-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
         .service-title svg {
             width: 36px; height: 36px; color: var(--navy-mid); flex-shrink: 0; display: block;
@@ -453,12 +407,6 @@
             border-color: var(--key);
             background: var(--navy);
             box-shadow: 0 0 0 6px rgba(185,215,255,0.14);
-            animation: circlePop .55s ease;
-        }
-        @keyframes circlePop {
-            0% { transform: scale(.86); }
-            70% { transform: scale(1.08); }
-            100% { transform: scale(1); }
         }
         .process-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--white); }
         .process-desc { font-size: 13px; color: rgba(255,255,255,0.58); line-height: 1.7; }
@@ -631,14 +579,13 @@
 
         @media (prefers-reduced-motion: reduce) {
             .anim { opacity: 1 !important; transform: none !important; transition: none !important; }
-            .ticker-inner, .hero-content, .hero-scroll, .orb, .hero-photo, .hero-rise, .hero-btn::after, .float-btn.consult, .process-step.is-on .process-circle { animation: none; }
+            .ticker-inner, .hero-content, .hero-scroll, .orb, .hero-photo, .hero-rise { animation: none; }
             .hero-line > span { transform: none; animation: none; }
             .hero-rise { opacity: 1; transform: none; }
             .gold-edge::after { transition: none; }
             .process-steps::after { transition: none; width: 75%; }
             .review-card, .review-card.is-left { transform: none !important; opacity: 1; }
-            .pain-photo img { clip-path: none; }
-            .pain-card:hover .pain-photo img, .ceo-frame:hover .ceo-img { transform: none; }
+            .pain-card:hover .pain-photo img { transform: none; }
         }
 
         @media (max-width: 900px) {
@@ -739,8 +686,6 @@
         <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></symbol>
         <symbol id="i-youtube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="m10 9.5 5 2.5-5 2.5V9.5z" fill="currentColor" stroke="none"/></symbol>
     </svg>
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <div class="page-grain" aria-hidden="true"></div>
     <!-- SNS 주소는 href만 교체하면 됩니다 -->
     <div class="float-side">
         <a class="float-btn consult" href="#apply" aria-label="무료 상담" title="무료 상담">
@@ -795,7 +740,6 @@
                 <img class="hero-photo" src="images/hero-v4.jpg" alt="">
             </div>
             <div class="hero-wash"></div>
-            <div class="hero-spot" id="heroSpot"></div>
         </div>
         <div class="hero-orbs" aria-hidden="true">
             <span class="orb orb-a"></span>
@@ -1292,72 +1236,14 @@
             counters.forEach((el) => io.observe(el));
         })();
 
-        (function () {
-            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const desktop = () => window.innerWidth > 900;
-            if (reduce) return;
-
-            const hero = document.querySelector('.hero');
-            const wrap = document.getElementById('heroPhotoWrap');
-            const spot = document.getElementById('heroSpot');
-            if (hero && wrap && spot) {
-                hero.addEventListener('mousemove', (e) => {
-                    if (!desktop()) return;
-                    const r = hero.getBoundingClientRect();
-                    const x = (e.clientX - r.left) / r.width - 0.5;
-                    const y = (e.clientY - r.top) / r.height - 0.5;
-                    wrap.style.transform = 'translate(' + (x * -22) + 'px,' + (y * -14) + 'px)';
-                    spot.style.setProperty('--spot-x', ((x + 0.5) * 100) + '%');
-                    spot.style.setProperty('--spot-y', ((y + 0.5) * 100) + '%');
-                });
-                hero.addEventListener('mouseleave', () => {
-                    wrap.style.transform = '';
-                    spot.style.setProperty('--spot-x', '50%');
-                    spot.style.setProperty('--spot-y', '38%');
-                });
-            }
-
-            document.querySelectorAll('.pain-card, .why-card, .service-card').forEach((card) => {
-                card.addEventListener('mousemove', (e) => {
-                    if (!desktop()) return;
-                    const r = card.getBoundingClientRect();
-                    const x = (e.clientX - r.left) / r.width;
-                    const y = (e.clientY - r.top) / r.height;
-                    card.style.transform = 'perspective(900px) rotateY(' + ((x - 0.5) * 5) + 'deg) rotateX(' + ((0.5 - y) * 5) + 'deg) translateY(-4px)';
-                });
-                card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-            });
-
-            document.querySelectorAll('.hero-btn, .form-submit, .nav-cta').forEach((btn) => {
-                btn.addEventListener('mousemove', (e) => {
-                    if (!desktop()) return;
-                    const r = btn.getBoundingClientRect();
-                    btn.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * 0.14) + 'px,' + ((e.clientY - r.top - r.height / 2) * 0.2) + 'px)';
-                });
-                btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-            });
-        })();
-
         const nav = document.getElementById('nav');
         const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
         const sections = document.querySelectorAll('section[id]');
-        const scrollProgress = document.getElementById('scrollProgress');
-        const heroContent = document.getElementById('heroContent');
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            const doc = document.documentElement;
-            const max = doc.scrollHeight - window.innerHeight;
-            if (scrollProgress && max > 0) scrollProgress.style.width = (y / max * 100) + '%';
-            nav.style.boxShadow = y > 80 ? '0 10px 28px rgba(8,32,72,0.08)' : 'none';
-            if (!reduceMotion && heroContent && y < window.innerHeight) {
-                const p = Math.min(1, y / (window.innerHeight * 0.72));
-                heroContent.style.opacity = String(1 - p);
-                heroContent.style.transform = 'translateY(' + (y * 0.18) + 'px)';
-            }
+            nav.style.boxShadow = window.scrollY > 80 ? '0 10px 28px rgba(8,32,72,0.08)' : 'none';
             let current = '';
             sections.forEach((section) => {
-                if (y >= section.offsetTop - 120) current = section.id;
+                if (window.scrollY >= section.offsetTop - 120) current = section.id;
             });
             if (current === 'why' || current === 'ceo') current = 'about';
             navLinks.forEach((link) => {
